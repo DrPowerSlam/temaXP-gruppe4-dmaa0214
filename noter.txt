@@ -1,0 +1,48 @@
+Vi har administrator og medlemmer.
+kun admin kan starte en auktion
+
+fleksibet system.
+
+Problemer. Fejlberegninger, mht. points og penge.
+
+Efter 5 år så får du ikke flere point men du skal stadigvæk betale kontigent.
+(medmindre du bruger point i mellemtiden).
+
+hvis man bruger 80 kr. så mister man 30
+
+den mængde penge man betale, så mister man en 1/3 point.
+
+
+en person der kan se hvem der har budt og hvor meget de har budt.
+en knap der siger byd.
+Man kan følge med hvem der har det højeste bud. (hele forsamlingen/medlemmerne).
+En timeout? 
+Medlemmerne ved ikke hvor mange point de andre medlemmer har.
+Skal man se hvem der byder??????
+bestem intervalget af forøgelsen. 10% af mindste prisen.
+fleksibelt intervalg. Sådan at hvis ingen byder højere så bliver den mindre intervalg. 
+Lige så snart du byder så skal det være muligt at se om du overhovedet kan lave det byd. (check for point osv.)
+
+
+
+Den med at der er en auktionarius. Som interagere.
+Aktionarius har retten til at forlænge og stoppe en auktion
+en tidsbestemt auktion.
+
+kun 1 auktion adgangen.
+
+Folk fra internettet SKAL IKKE være med til auktionen.
+
+Når man køber, så skal det nedskrevet af hvor mange points der bliver brugt. Det er kasserens opgave.
+De har en konto. Mobilepay. 
+bordet fanger.
+Hvis personen ikke betaler..???
+
+kun håndtere hvad man har lige nu og hvad man har indkøbt/på lager.
+
+Sende en mail, når en ny udstilling og når der kommer general forsamling i god tid.
+reservere til deres outlook kalender?
+
+Donere et maleri og få nogle points?
+fleksibel pointsystem.
+bestyrelsen bestemmer hvor mange point en auktion skal være med til. (eller om der skal ikke være nogle).
