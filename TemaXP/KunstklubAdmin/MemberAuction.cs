@@ -10,9 +10,10 @@ using System.Windows.Forms;
 
 namespace KunstklubAdmin
 {
-    public partial class Main : Form
+    public partial class MemberAuction : Form
     {
-        public Main()
+
+        public MemberAuction()
         {
             InitializeComponent();
         }
