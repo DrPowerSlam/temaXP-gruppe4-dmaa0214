@@ -36,6 +36,7 @@
             this.medlemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kunstværkerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.omToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gåTilAuktionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,25 +67,27 @@
             // opretToolStripMenuItem
             // 
             this.opretToolStripMenuItem.Name = "opretToolStripMenuItem";
-            this.opretToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.opretToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
             this.opretToolStripMenuItem.Text = "Opret";
             this.opretToolStripMenuItem.Click += new System.EventHandler(this.opretToolStripMenuItem_Click);
             // 
             // startToolStripMenuItem
             // 
             this.startToolStripMenuItem.Name = "startToolStripMenuItem";
-            this.startToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.startToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
             this.startToolStripMenuItem.Text = "Start";
             this.startToolStripMenuItem.Click += new System.EventHandler(this.startToolStripMenuItem_Click);
             // 
             // arkivToolStripMenuItem
             // 
             this.arkivToolStripMenuItem.Name = "arkivToolStripMenuItem";
-            this.arkivToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.arkivToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
             this.arkivToolStripMenuItem.Text = "Arkiv";
             // 
             // medlemToolStripMenuItem
             // 
+            this.medlemToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gåTilAuktionToolStripMenuItem});
             this.medlemToolStripMenuItem.Name = "medlemToolStripMenuItem";
             this.medlemToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.medlemToolStripMenuItem.Text = "Medlem";
@@ -100,6 +103,13 @@
             this.omToolStripMenuItem.Name = "omToolStripMenuItem";
             this.omToolStripMenuItem.Size = new System.Drawing.Size(61, 24);
             this.omToolStripMenuItem.Text = "Hjælp";
+            // 
+            // gåTilAuktionToolStripMenuItem
+            // 
+            this.gåTilAuktionToolStripMenuItem.Name = "gåTilAuktionToolStripMenuItem";
+            this.gåTilAuktionToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.gåTilAuktionToolStripMenuItem.Text = "Gå til auktion";
+            this.gåTilAuktionToolStripMenuItem.Click += new System.EventHandler(this.gåTilAuktionToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -128,6 +138,7 @@
         private System.Windows.Forms.ToolStripMenuItem medlemToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kunstværkerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem omToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gåTilAuktionToolStripMenuItem;
     }
 }
 
