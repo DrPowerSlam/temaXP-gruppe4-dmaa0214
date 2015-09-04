@@ -14,6 +14,7 @@ namespace Tests
         private PaintingCtr ctr;
         private Painting painting;
 
+        //TODO nummer skal være firechifret nummer...
         [TestInitialize]
         public void PaintingInitialize()
         {
