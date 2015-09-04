@@ -15,7 +15,7 @@ namespace TemaXP.ModelLayer
         public int Year { get; set; }
 
         // 4 ciphers
-        public int Id { get; set; }
+        public int ID { get; set; }
         public String Description { get; set; }
         public double PurchasePrice { get; set; }
         public int Interval { get; set; }

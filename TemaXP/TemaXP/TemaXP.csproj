@@ -62,6 +62,9 @@
       <DependentUpon>201509040811420_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="ModelLayer\Auction.cs" />
+    <Compile Include="ModelLayer\Bid.cs" />
+    <Compile Include="ModelLayer\Member.cs" />
     <Compile Include="ModelLayer\Painting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

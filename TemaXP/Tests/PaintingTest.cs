@@ -43,9 +43,9 @@ namespace Tests
         public void CreateFindPainting()
         {
             ctr.InsertPainting(painting);
-            Painting foundPainting = ctr.FindPainting(painting.Id);
+            Painting foundPainting = ctr.FindPainting(painting.ID);
             Assert.AreEqual("TestTitle", foundPainting.Title);
-            ctr.DeletePainting(foundPainting.Id);
+            ctr.DeletePainting(foundPainting.ID);
         }
 
     }
