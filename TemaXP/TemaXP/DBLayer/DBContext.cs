@@ -1,6 +1,4 @@
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-using System.Data.Entity.Migrations;
 using TemaXP.ModelLayer;
 
 namespace TemaXP.DBLayer
@@ -20,7 +18,6 @@ namespace TemaXP.DBLayer
             : base("Name=TemaXPContext")
         {
         }
-
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

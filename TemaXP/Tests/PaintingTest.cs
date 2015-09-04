@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.Migrations;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TemaXP.CtrLayer;
-using TemaXP.DBLayer;
 using TemaXP.ModelLayer;
 
 namespace Tests

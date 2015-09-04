@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TemaXP.ModelLayer
 {
@@ -12,6 +9,5 @@ namespace TemaXP.ModelLayer
         public List<Painting> Paintings { get; set; }
         public List<Member> Members { get; set; }
         public DateTime Date { get; set; }
-
     }
 }

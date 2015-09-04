@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TemaXP.ModelLayer
 {
@@ -21,8 +17,7 @@ namespace TemaXP.ModelLayer
         public int Points { get; set; }
 
         public List<Bid> Bids { get; set; }
-        
-        // bool admin? 
 
+        // bool admin?
     }
 }

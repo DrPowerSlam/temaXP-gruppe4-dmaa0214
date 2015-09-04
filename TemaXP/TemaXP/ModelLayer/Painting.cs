@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.Migrations.Model;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TemaXP.ModelLayer
 {
@@ -11,11 +6,13 @@ namespace TemaXP.ModelLayer
     {
         // default "Ukendt"
         public String Author { get; set; }
+
         public String Title { get; set; }
         public int Year { get; set; }
 
         // 4 ciphers
         public int ID { get; set; }
+
         public String Description { get; set; }
         public double PurchasePrice { get; set; }
         public int Interval { get; set; }
@@ -30,8 +27,8 @@ namespace TemaXP.ModelLayer
             Author = "Ukendt";
         }
 
-        public Painting(string author, string title, int year, 
-            string description, double purchasePrice, int interval, 
+        public Painting(string author, string title, int year,
+            string description, double purchasePrice, int interval,
             string image, double minPrice)
         {
             Author = author;
