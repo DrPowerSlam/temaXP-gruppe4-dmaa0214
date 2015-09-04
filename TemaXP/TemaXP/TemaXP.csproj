@@ -53,7 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CtrLayer\AuctionCtr.cs" />
     <Compile Include="CtrLayer\PaintingCtr.cs" />
+    <Compile Include="DBLayer\AuctionRepository.cs" />
     <Compile Include="DBLayer\DBContext.cs" />
     <Compile Include="DBLayer\PaintingRepository.cs" />
     <Compile Include="DBLayer\SuperRepository.cs" />
