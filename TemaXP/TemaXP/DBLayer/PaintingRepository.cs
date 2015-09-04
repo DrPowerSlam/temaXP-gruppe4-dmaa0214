@@ -28,5 +28,10 @@ namespace TemaXP.DBLayer
             context.Paintings.Remove(FindPainting(id));
             Save();
         }
+
+        public List<Painting> GetAllPaintings()
+        {
+            return context.Paintings.ToList();
+        }
     }
 }

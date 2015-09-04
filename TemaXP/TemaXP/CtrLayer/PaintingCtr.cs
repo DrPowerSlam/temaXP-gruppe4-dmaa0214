@@ -27,6 +27,11 @@ namespace TemaXP.CtrLayer
             return repos.FindPainting(id);
         }
 
+        public List<Painting> GetAllPaintings()
+        {
+            return repos.GetAllPaintings();
+        }
+
         public void DeletePainting(int id)
         {
             repos.DeletePainting(id);

@@ -9,6 +9,7 @@ namespace TemaXP.ModelLayer
 {
     public class Member
     {
+        public int ID { get; set; }
         public String Name { get; set; }
         public String Department { get; set; }
         public String CPR { get; set; }
@@ -19,7 +20,7 @@ namespace TemaXP.ModelLayer
         public String PhoneNr { get; set; }
         public int Points { get; set; }
 
-        public Bid CurrentBid { get; set; }
+        public List<Bid> Bids { get; set; }
         
         // bool admin? 
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TemaXP.CtrLayer;
@@ -47,6 +48,5 @@ namespace Tests
             Assert.AreEqual("TestTitle", foundPainting.Title);
             ctr.DeletePainting(foundPainting.ID);
         }
-
     }
 }
