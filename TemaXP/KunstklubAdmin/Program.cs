@@ -16,7 +16,7 @@ namespace KunstklubAdmin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MemberAuction());
+            Application.Run(new Main());
         }
     }
 }

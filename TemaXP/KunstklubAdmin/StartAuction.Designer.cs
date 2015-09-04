@@ -28,23 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.auktionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.opretToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.arkivToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.medlemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kunstværkerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hjælpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.leftPanel = new System.Windows.Forms.Panel();
+            this.lblItems = new System.Windows.Forms.Label();
             this.listItem = new System.Windows.Forms.ListView();
             this.StartAuctionPanel = new System.Windows.Forms.Panel();
             this.btnStartAuction = new System.Windows.Forms.Button();
-            this.txtAuctionName = new System.Windows.Forms.TextBox();
             this.rightPanel = new System.Windows.Forms.Panel();
             this.lblBid = new System.Windows.Forms.Label();
             this.listBid = new System.Windows.Forms.ListView();
             this.centralPanel = new System.Windows.Forms.Panel();
+            this.txtInterval = new System.Windows.Forms.TextBox();
+            this.lblInterval = new System.Windows.Forms.Label();
             this.TimerPanel = new System.Windows.Forms.Panel();
             this.lblTimer = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
@@ -68,19 +62,16 @@
             this.btnStop = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblAdminTools = new System.Windows.Forms.Label();
-            this.lblInterval = new System.Windows.Forms.Label();
-            this.txtInterval = new System.Windows.Forms.TextBox();
-            this.panelEditInterval = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.lblItems = new System.Windows.Forms.Label();
-            this.OKInterval = new System.Windows.Forms.Button();
             this.panelEditTimer = new System.Windows.Forms.Panel();
+            this.comboBoxTimer = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.lblTimerEdit = new System.Windows.Forms.Label();
-            this.comboBoxTimer = new System.Windows.Forms.ComboBox();
-            this.menuStrip1.SuspendLayout();
+            this.panelEditInterval = new System.Windows.Forms.Panel();
+            this.OKInterval = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.lblAdminTools = new System.Windows.Forms.Label();
+            this.lblAuctionName = new System.Windows.Forms.Label();
             this.leftPanel.SuspendLayout();
             this.StartAuctionPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
@@ -89,69 +80,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.buttonPanel.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panelEditInterval.SuspendLayout();
             this.panelEditTimer.SuspendLayout();
+            this.panelEditInterval.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.auktionToolStripMenuItem,
-            this.medlemToolStripMenuItem,
-            this.kunstværkerToolStripMenuItem,
-            this.hjælpToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1147, 28);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // auktionToolStripMenuItem
-            // 
-            this.auktionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.opretToolStripMenuItem,
-            this.startToolStripMenuItem,
-            this.arkivToolStripMenuItem});
-            this.auktionToolStripMenuItem.Name = "auktionToolStripMenuItem";
-            this.auktionToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
-            this.auktionToolStripMenuItem.Text = "Auktion";
-            // 
-            // opretToolStripMenuItem
-            // 
-            this.opretToolStripMenuItem.Name = "opretToolStripMenuItem";
-            this.opretToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
-            this.opretToolStripMenuItem.Text = "Opret";
-            // 
-            // startToolStripMenuItem
-            // 
-            this.startToolStripMenuItem.Name = "startToolStripMenuItem";
-            this.startToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
-            this.startToolStripMenuItem.Text = "Start";
-            // 
-            // arkivToolStripMenuItem
-            // 
-            this.arkivToolStripMenuItem.Name = "arkivToolStripMenuItem";
-            this.arkivToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
-            this.arkivToolStripMenuItem.Text = "Arkiv";
-            // 
-            // medlemToolStripMenuItem
-            // 
-            this.medlemToolStripMenuItem.Name = "medlemToolStripMenuItem";
-            this.medlemToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
-            this.medlemToolStripMenuItem.Text = "Medlem";
-            // 
-            // kunstværkerToolStripMenuItem
-            // 
-            this.kunstværkerToolStripMenuItem.Name = "kunstværkerToolStripMenuItem";
-            this.kunstværkerToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
-            this.kunstværkerToolStripMenuItem.Text = "Kunstværker";
-            // 
-            // hjælpToolStripMenuItem
-            // 
-            this.hjælpToolStripMenuItem.Name = "hjælpToolStripMenuItem";
-            this.hjælpToolStripMenuItem.Size = new System.Drawing.Size(61, 24);
-            this.hjælpToolStripMenuItem.Text = "Hjælp";
             // 
             // leftPanel
             // 
@@ -159,11 +90,20 @@
             this.leftPanel.Controls.Add(this.listItem);
             this.leftPanel.Controls.Add(this.StartAuctionPanel);
             this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.leftPanel.Location = new System.Drawing.Point(0, 28);
+            this.leftPanel.Location = new System.Drawing.Point(0, 0);
             this.leftPanel.Margin = new System.Windows.Forms.Padding(10);
             this.leftPanel.Name = "leftPanel";
-            this.leftPanel.Size = new System.Drawing.Size(200, 538);
+            this.leftPanel.Size = new System.Drawing.Size(200, 566);
             this.leftPanel.TabIndex = 1;
+            // 
+            // lblItems
+            // 
+            this.lblItems.AutoSize = true;
+            this.lblItems.Location = new System.Drawing.Point(13, 107);
+            this.lblItems.Name = "lblItems";
+            this.lblItems.Size = new System.Drawing.Size(157, 17);
+            this.lblItems.TabIndex = 3;
+            this.lblItems.Text = "Kunstværker til auktion:";
             // 
             // listItem
             // 
@@ -176,8 +116,8 @@
             // 
             // StartAuctionPanel
             // 
+            this.StartAuctionPanel.Controls.Add(this.lblAuctionName);
             this.StartAuctionPanel.Controls.Add(this.btnStartAuction);
-            this.StartAuctionPanel.Controls.Add(this.txtAuctionName);
             this.StartAuctionPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.StartAuctionPanel.Location = new System.Drawing.Point(0, 0);
             this.StartAuctionPanel.Name = "StartAuctionPanel";
@@ -187,30 +127,22 @@
             // btnStartAuction
             // 
             this.btnStartAuction.AutoSize = true;
-            this.btnStartAuction.Location = new System.Drawing.Point(88, 63);
+            this.btnStartAuction.Location = new System.Drawing.Point(45, 57);
             this.btnStartAuction.Name = "btnStartAuction";
             this.btnStartAuction.Size = new System.Drawing.Size(99, 27);
             this.btnStartAuction.TabIndex = 1;
             this.btnStartAuction.Text = "Start Auktion";
             this.btnStartAuction.UseVisualStyleBackColor = true;
             // 
-            // txtAuctionName
-            // 
-            this.txtAuctionName.Location = new System.Drawing.Point(13, 25);
-            this.txtAuctionName.Name = "txtAuctionName";
-            this.txtAuctionName.ReadOnly = true;
-            this.txtAuctionName.Size = new System.Drawing.Size(131, 22);
-            this.txtAuctionName.TabIndex = 0;
-            // 
             // rightPanel
             // 
             this.rightPanel.Controls.Add(this.lblBid);
             this.rightPanel.Controls.Add(this.listBid);
             this.rightPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rightPanel.Location = new System.Drawing.Point(947, 28);
+            this.rightPanel.Location = new System.Drawing.Point(947, 0);
             this.rightPanel.Margin = new System.Windows.Forms.Padding(0);
             this.rightPanel.Name = "rightPanel";
-            this.rightPanel.Size = new System.Drawing.Size(200, 538);
+            this.rightPanel.Size = new System.Drawing.Size(200, 566);
             this.rightPanel.TabIndex = 2;
             // 
             // lblBid
@@ -253,10 +185,27 @@
             this.centralPanel.Controls.Add(this.buttonPanel);
             this.centralPanel.Controls.Add(this.panel1);
             this.centralPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.centralPanel.Location = new System.Drawing.Point(200, 28);
+            this.centralPanel.Location = new System.Drawing.Point(200, 0);
             this.centralPanel.Name = "centralPanel";
-            this.centralPanel.Size = new System.Drawing.Size(747, 538);
+            this.centralPanel.Size = new System.Drawing.Size(747, 566);
             this.centralPanel.TabIndex = 3;
+            // 
+            // txtInterval
+            // 
+            this.txtInterval.Location = new System.Drawing.Point(400, 137);
+            this.txtInterval.Name = "txtInterval";
+            this.txtInterval.ReadOnly = true;
+            this.txtInterval.Size = new System.Drawing.Size(100, 22);
+            this.txtInterval.TabIndex = 23;
+            // 
+            // lblInterval
+            // 
+            this.lblInterval.AutoSize = true;
+            this.lblInterval.Location = new System.Drawing.Point(329, 142);
+            this.lblInterval.Name = "lblInterval";
+            this.lblInterval.Size = new System.Drawing.Size(58, 17);
+            this.lblInterval.TabIndex = 22;
+            this.lblInterval.Text = "Interval:";
             // 
             // TimerPanel
             // 
@@ -411,7 +360,7 @@
             this.buttonPanel.Controls.Add(this.btnStop);
             this.buttonPanel.Controls.Add(this.btnNext);
             this.buttonPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonPanel.Location = new System.Drawing.Point(0, 438);
+            this.buttonPanel.Location = new System.Drawing.Point(0, 466);
             this.buttonPanel.Name = "buttonPanel";
             this.buttonPanel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.buttonPanel.Size = new System.Drawing.Size(547, 100);
@@ -462,78 +411,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(547, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 538);
+            this.panel1.Size = new System.Drawing.Size(200, 566);
             this.panel1.TabIndex = 1;
-            // 
-            // lblAdminTools
-            // 
-            this.lblAdminTools.AutoSize = true;
-            this.lblAdminTools.Location = new System.Drawing.Point(4, 4);
-            this.lblAdminTools.Name = "lblAdminTools";
-            this.lblAdminTools.Size = new System.Drawing.Size(111, 17);
-            this.lblAdminTools.TabIndex = 0;
-            this.lblAdminTools.Text = "Admin værktøjer";
-            // 
-            // lblInterval
-            // 
-            this.lblInterval.AutoSize = true;
-            this.lblInterval.Location = new System.Drawing.Point(329, 142);
-            this.lblInterval.Name = "lblInterval";
-            this.lblInterval.Size = new System.Drawing.Size(58, 17);
-            this.lblInterval.TabIndex = 22;
-            this.lblInterval.Text = "Interval:";
-            // 
-            // txtInterval
-            // 
-            this.txtInterval.Location = new System.Drawing.Point(400, 137);
-            this.txtInterval.Name = "txtInterval";
-            this.txtInterval.ReadOnly = true;
-            this.txtInterval.Size = new System.Drawing.Size(100, 22);
-            this.txtInterval.TabIndex = 23;
-            // 
-            // panelEditInterval
-            // 
-            this.panelEditInterval.Controls.Add(this.OKInterval);
-            this.panelEditInterval.Controls.Add(this.label1);
-            this.panelEditInterval.Controls.Add(this.textBox4);
-            this.panelEditInterval.Location = new System.Drawing.Point(7, 140);
-            this.panelEditInterval.Name = "panelEditInterval";
-            this.panelEditInterval.Size = new System.Drawing.Size(174, 91);
-            this.panelEditInterval.TabIndex = 25;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 17);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Interval:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(68, 21);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 23;
-            // 
-            // lblItems
-            // 
-            this.lblItems.AutoSize = true;
-            this.lblItems.Location = new System.Drawing.Point(13, 107);
-            this.lblItems.Name = "lblItems";
-            this.lblItems.Size = new System.Drawing.Size(157, 17);
-            this.lblItems.TabIndex = 3;
-            this.lblItems.Text = "Kunstværker til auktion:";
-            // 
-            // OKInterval
-            // 
-            this.OKInterval.Location = new System.Drawing.Point(97, 65);
-            this.OKInterval.Name = "OKInterval";
-            this.OKInterval.Size = new System.Drawing.Size(75, 23);
-            this.OKInterval.TabIndex = 24;
-            this.OKInterval.Text = "OK";
-            this.OKInterval.UseVisualStyleBackColor = true;
             // 
             // panelEditTimer
             // 
@@ -544,6 +423,14 @@
             this.panelEditTimer.Name = "panelEditTimer";
             this.panelEditTimer.Size = new System.Drawing.Size(174, 91);
             this.panelEditTimer.TabIndex = 26;
+            // 
+            // comboBoxTimer
+            // 
+            this.comboBoxTimer.FormattingEnabled = true;
+            this.comboBoxTimer.Location = new System.Drawing.Point(59, 17);
+            this.comboBoxTimer.Name = "comboBoxTimer";
+            this.comboBoxTimer.Size = new System.Drawing.Size(109, 24);
+            this.comboBoxTimer.TabIndex = 25;
             // 
             // button1
             // 
@@ -563,13 +450,58 @@
             this.lblTimerEdit.TabIndex = 22;
             this.lblTimerEdit.Text = "Timer:";
             // 
-            // comboBoxTimer
+            // panelEditInterval
             // 
-            this.comboBoxTimer.FormattingEnabled = true;
-            this.comboBoxTimer.Location = new System.Drawing.Point(59, 17);
-            this.comboBoxTimer.Name = "comboBoxTimer";
-            this.comboBoxTimer.Size = new System.Drawing.Size(109, 24);
-            this.comboBoxTimer.TabIndex = 25;
+            this.panelEditInterval.Controls.Add(this.OKInterval);
+            this.panelEditInterval.Controls.Add(this.label1);
+            this.panelEditInterval.Controls.Add(this.textBox4);
+            this.panelEditInterval.Location = new System.Drawing.Point(7, 140);
+            this.panelEditInterval.Name = "panelEditInterval";
+            this.panelEditInterval.Size = new System.Drawing.Size(174, 91);
+            this.panelEditInterval.TabIndex = 25;
+            // 
+            // OKInterval
+            // 
+            this.OKInterval.Location = new System.Drawing.Point(97, 65);
+            this.OKInterval.Name = "OKInterval";
+            this.OKInterval.Size = new System.Drawing.Size(75, 23);
+            this.OKInterval.TabIndex = 24;
+            this.OKInterval.Text = "OK";
+            this.OKInterval.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 17);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Interval:";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(68, 21);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 22);
+            this.textBox4.TabIndex = 0;
+            // 
+            // lblAdminTools
+            // 
+            this.lblAdminTools.AutoSize = true;
+            this.lblAdminTools.Location = new System.Drawing.Point(4, 4);
+            this.lblAdminTools.Name = "lblAdminTools";
+            this.lblAdminTools.Size = new System.Drawing.Size(111, 17);
+            this.lblAdminTools.TabIndex = 0;
+            this.lblAdminTools.Text = "Admin værktøjer";
+            // 
+            // lblAuctionName
+            // 
+            this.lblAuctionName.AutoSize = true;
+            this.lblAuctionName.Location = new System.Drawing.Point(13, 17);
+            this.lblAuctionName.Name = "lblAuctionName";
+            this.lblAuctionName.Size = new System.Drawing.Size(92, 17);
+            this.lblAuctionName.TabIndex = 2;
+            this.lblAuctionName.Text = "Auktion Navn";
             // 
             // StartAuction
             // 
@@ -579,13 +511,9 @@
             this.Controls.Add(this.centralPanel);
             this.Controls.Add(this.rightPanel);
             this.Controls.Add(this.leftPanel);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "StartAuction";
             this.Text = "Start Auktion";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.leftPanel.ResumeLayout(false);
             this.leftPanel.PerformLayout();
             this.StartAuctionPanel.ResumeLayout(false);
@@ -600,30 +528,20 @@
             this.buttonPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panelEditInterval.ResumeLayout(false);
-            this.panelEditInterval.PerformLayout();
             this.panelEditTimer.ResumeLayout(false);
             this.panelEditTimer.PerformLayout();
+            this.panelEditInterval.ResumeLayout(false);
+            this.panelEditInterval.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem auktionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem opretToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem arkivToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem medlemToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kunstværkerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hjælpToolStripMenuItem;
         private System.Windows.Forms.Panel leftPanel;
         private System.Windows.Forms.ListView listItem;
         private System.Windows.Forms.Panel StartAuctionPanel;
         private System.Windows.Forms.Button btnStartAuction;
-        private System.Windows.Forms.TextBox txtAuctionName;
         private System.Windows.Forms.Panel rightPanel;
         private System.Windows.Forms.ListView listBid;
         private System.Windows.Forms.Panel centralPanel;
@@ -663,5 +581,6 @@
         private System.Windows.Forms.Button OKInterval;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label lblAuctionName;
     }
 }
