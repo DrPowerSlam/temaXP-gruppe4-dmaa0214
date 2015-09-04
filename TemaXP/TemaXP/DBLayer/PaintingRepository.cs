@@ -15,7 +15,6 @@ namespace TemaXP.DBLayer
         {
             context.Paintings.Add(painting);
             Save();
-
         }
 
         public Painting FindPainting(int id)
