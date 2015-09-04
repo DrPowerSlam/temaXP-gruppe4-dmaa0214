@@ -17,10 +17,19 @@ namespace TemaXP.CtrLayer
             repos = new PaintingRepository();
         }
 
-        public Painting InsertPainting(Painting painting)
+        public void InsertPainting(Painting painting)
         {
             repos.InsertPainting(painting);
         }
 
+        public Painting FindPainting(int id)
+        {
+            return repos.FindPainting(id);
+        }
+
+        public void DeletePainting(int id)
+        {
+            repos.DeletePainting(id);
+        }
     }
 }

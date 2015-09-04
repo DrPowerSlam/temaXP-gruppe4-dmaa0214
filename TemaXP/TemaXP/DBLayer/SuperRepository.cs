@@ -14,5 +14,10 @@ namespace TemaXP.DBLayer
         {
             context = new DBContext();
         }
+
+        protected void Save()
+        {
+            context.SaveChanges();
+        }
     }
 }

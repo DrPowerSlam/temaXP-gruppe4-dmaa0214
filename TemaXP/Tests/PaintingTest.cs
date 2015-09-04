@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.Entity.Migrations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TemaXP.CtrLayer;
 using TemaXP.DBLayer;
 using TemaXP.ModelLayer;
 
@@ -9,24 +10,15 @@ namespace Tests
     [TestClass]
     public class PaintingTest
     {
-        private DBContext con;
+        private PaintingCtr ctr;
+        private Painting painting;
 
         [TestInitialize]
         public void PaintingInitialize()
         {
-            con = new DBContext();
-        }
+            ctr = new PaintingCtr();
 
-        [TestCleanup]
-        public void PaintingCleanUp()
-        {
-            con = null;
-        }
-
-        [TestMethod]
-        public void CreatePainting()
-        {
-            Painting painting = new Painting()
+            painting = new Painting()
             {
                 Author = "TestAuthor",
                 Description = "TestDescription",
@@ -38,21 +30,22 @@ namespace Tests
                 Title = "TestTitle",
                 Year = 2005,
             };
+        }
 
-            con.Paintings.Add(painting);
-            con.SaveChanges();
-
-            Painting foundPainting = con.Paintings.Find(painting.Id);
-
-            Assert.AreEqual("TestTitle", foundPainting.Title);
-
-            con.Paintings.Remove(foundPainting);
-            con.SaveChanges();
+        [TestCleanup]
+        public void PaintingCleanUp()
+        {
+            ctr = null;
+            painting = null;
         }
 
         [TestMethod]
-        public void FindPainting()
+        public void CreateFindPainting()
         {
+            ctr.InsertPainting(painting);
+            Painting foundPainting = ctr.FindPainting(painting.Id);
+            Assert.AreEqual("TestTitle", foundPainting.Title);
+            ctr.DeletePainting(foundPainting.Id);
         }
 
     }
