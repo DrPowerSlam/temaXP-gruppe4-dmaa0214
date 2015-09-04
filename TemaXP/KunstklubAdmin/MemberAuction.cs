@@ -29,5 +29,10 @@ namespace KunstklubAdmin
             StartAuction startAuction=new StartAuction();
             startAuction.Show();
         }
+
+        private void MemberAuction_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
