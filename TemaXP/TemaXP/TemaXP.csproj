@@ -76,9 +76,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GUILayer\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201509040811420_init.resx">
       <DependentUpon>201509040811420_init.cs</DependentUpon>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.leftPanel = new System.Windows.Forms.Panel();
             this.lblItems = new System.Windows.Forms.Label();
             this.listItem = new System.Windows.Forms.ListView();
@@ -73,6 +74,7 @@
             this.lblSetInterval = new System.Windows.Forms.Label();
             this.txtSetInterval = new System.Windows.Forms.TextBox();
             this.lblAdminTools = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.leftPanel.SuspendLayout();
             this.StartAuctionPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
@@ -414,6 +416,7 @@
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // btnPause
             // 
@@ -424,6 +427,7 @@
             this.btnPause.TabIndex = 1;
             this.btnPause.Text = "Pause";
             this.btnPause.UseVisualStyleBackColor = true;
+            this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
             // 
             // btnStop
             // 
@@ -487,6 +491,7 @@
             this.btnOKTimer.TabIndex = 24;
             this.btnOKTimer.Text = "OK";
             this.btnOKTimer.UseVisualStyleBackColor = true;
+            this.btnOKTimer.Click += new System.EventHandler(this.btnOKTimer_Click);
             // 
             // lblTimerEdit
             // 
@@ -556,6 +561,15 @@
             this.lblAdminTools.Size = new System.Drawing.Size(84, 13);
             this.lblAdminTools.TabIndex = 0;
             this.lblAdminTools.Text = "Admin værktøjer";
+            // 
+            // lblPercent
+            // 
+            this.lblPercent.AutoSize = true;
+            this.lblPercent.Location = new System.Drawing.Point(104, 20);
+            this.lblPercent.Name = "lblPercent";
+            this.lblPercent.Size = new System.Drawing.Size(15, 13);
+            this.lblPercent.TabIndex = 25;
+            this.lblPercent.Text = "%";
             // 
             // StartAuction
             // 
@@ -638,5 +652,9 @@
         private System.Windows.Forms.TextBox txtSetInterval;
         private System.Windows.Forms.Label lblAuctionName;
         private System.Windows.Forms.Label lblPercent;
+        private System.Windows.Forms.Timer timer;
+
+
     }
+
 }
