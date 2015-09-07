@@ -1,9 +1,6 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TemaXP.ModelLayer;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TemaXP.CtrLayer;
+using TemaXP.ModelLayer;
 
 namespace Tests
 {
@@ -33,7 +30,7 @@ namespace Tests
                 CPR = "123456-7890",
                 Department = "Kunst",
                 Email = "hans@ucn.dk",
-                
+
             };
         }
 
@@ -50,7 +47,7 @@ namespace Tests
             ctr.InsertMember(member);
             Member foundMember = ctr.FindMember(member.ID);
             Assert.AreEqual("Hans Hansen", foundMember.Name);
-            //ctr.DeleteMember(foundMember.ID);
+            ctr.DeleteMember(foundMember.ID);
         }
 
 
