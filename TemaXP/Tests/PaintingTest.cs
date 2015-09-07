@@ -5,18 +5,18 @@ using TemaXP.ModelLayer;
 namespace Tests
 {
     [TestClass]
-    public class PaintingTest
+    public class ItemTest
     {
-        private PaintingCtr ctr;
-        private Painting painting;
+        private ItemCtr ctr;
+        private Item Item;
 
         //TODO nummer skal være firechifret nummer...
         [TestInitialize]
-        public void PaintingInitialize()
+        public void ItemInitialize()
         {
-            ctr = new PaintingCtr();
+            ctr = new ItemCtr();
 
-            painting = new Painting()
+            Item = new Item()
             {
                 Author = "TestAuthor",
                 Description = "TestDescription",
@@ -31,19 +31,19 @@ namespace Tests
         }
 
         [TestCleanup]
-        public void PaintingCleanUp()
+        public void ItemCleanUp()
         {
             ctr = null;
-            painting = null;
+            Item = null;
         }
 
         [TestMethod]
-        public void CreateFindPainting()
+        public void CreateFindItem()
         {
-            ctr.InsertPainting(painting);
-            Painting foundPainting = ctr.FindPainting(painting.ID);
-            Assert.AreEqual("TestTitle", foundPainting.Title);
-            ctr.DeletePainting(foundPainting.ID);
+            ctr.InsertItem(Item);
+            Item foundItem = ctr.FindItem(Item.ID);
+            Assert.AreEqual("TestTitle", foundItem.Title);
+            ctr.DeleteItem(foundItem.ID);
         }
     }
 }

@@ -4,33 +4,33 @@ using TemaXP.ModelLayer;
 
 namespace TemaXP.CtrLayer
 {
-    public class PaintingCtr
+    public class ItemCtr
     {
-        private PaintingRepository repos;
+        private ItemRepository repos;
 
-        public PaintingCtr()
+        public ItemCtr()
         {
-            repos = new PaintingRepository();
+            repos = new ItemRepository();
         }
 
-        public void InsertPainting(Painting painting)
+        public void InsertItem(Item Item)
         {
-            repos.InsertPainting(painting);
+            repos.InsertItem(Item);
         }
 
-        public Painting FindPainting(int id)
+        public Item FindItem(int id)
         {
-            return repos.FindPainting(id);
+            return repos.FindItem(id);
         }
 
-        public List<Painting> GetAllPaintings()
+        public List<Item> GetAllItems()
         {
-            return repos.GetAllPaintings();
+            return repos.GetAllItems();
         }
 
-        public void DeletePainting(int id)
+        public void DeleteItem(int id)
         {
-            repos.DeletePainting(id);
+            repos.DeleteItem(id);
         }
     }
 }

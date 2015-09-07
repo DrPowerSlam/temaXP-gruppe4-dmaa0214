@@ -2,7 +2,7 @@
 
 namespace TemaXP.ModelLayer
 {
-    public class Painting
+    public class Item
     {
         // default "Ukendt"
         public String Author { get; set; }
@@ -22,12 +22,12 @@ namespace TemaXP.ModelLayer
         // Perhaps unneeded
         public bool Sold { get; set; }
 
-        public Painting()
+        public Item()
         {
             Author = "Ukendt";
         }
 
-        public Painting(string author, string title, int year,
+        public Item(string author, string title, int year,
             string description, double purchasePrice, int interval,
             string image, double minPrice)
         {

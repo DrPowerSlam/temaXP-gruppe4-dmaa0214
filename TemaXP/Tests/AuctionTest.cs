@@ -23,17 +23,17 @@ namespace Tests
                 new Member(),
             };
 
-            List<Painting> paintings = new List<Painting>()
+            List<Item> Items = new List<Item>()
             {
-                new Painting(),
-                new Painting(),
+                new Item(),
+                new Item(),
             };
 
             auction = new Auction()
             {
                 Date = DateTime.Now,
                 Members = members,
-                Paintings = paintings
+                Items = Items
             };
         }
 
