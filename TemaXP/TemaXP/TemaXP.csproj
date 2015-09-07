@@ -55,9 +55,11 @@
   <ItemGroup>
     <Compile Include="CtrLayer\AuctionCtr.cs" />
     <Compile Include="CtrLayer\ItemCtr.cs" />
+    <Compile Include="CtrLayer\MemberCtr.cs" />
     <Compile Include="DBLayer\AuctionRepository.cs" />
     <Compile Include="DBLayer\DBContext.cs" />
     <Compile Include="DBLayer\ItemRepository.cs" />
+    <Compile Include="DBLayer\MemberRepository.cs" />
     <Compile Include="DBLayer\SuperRepository.cs" />
     <Compile Include="Migrations\201509040811420_init.cs" />
     <Compile Include="Migrations\201509040811420_init.Designer.cs">

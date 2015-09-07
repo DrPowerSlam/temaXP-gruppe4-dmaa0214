@@ -16,6 +16,8 @@ namespace TemaXP.ModelLayer
         public String City { get; set; }
         public String Email { get; set; }
         public String PhoneNr { get; set; }
+
+        //ik mere end 5 års kontigent i points. 50(om måneden)*12(1 år)*5(5 år)
         public int Points { get; set; }
 
         public List<Bid> Bids { get; set; }
@@ -25,5 +27,7 @@ namespace TemaXP.ModelLayer
         public Auction Auction { get; set; }
 
         // bool admin?
+
+
     }
 }
