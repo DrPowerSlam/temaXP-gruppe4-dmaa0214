@@ -40,7 +40,7 @@
             this.centralPanel = new System.Windows.Forms.Panel();
             this.txtInterval = new System.Windows.Forms.TextBox();
             this.lblInterval = new System.Windows.Forms.Label();
-            this.TimerPanel = new System.Windows.Forms.Panel();
+            this.timerPanel = new System.Windows.Forms.Panel();
             this.lblTimer = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.lblDkk2 = new System.Windows.Forms.Label();
@@ -50,36 +50,37 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.lblMinPrice = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtArtist = new System.Windows.Forms.TextBox();
             this.lblArtist = new System.Windows.Forms.Label();
             this.txtTitel = new System.Windows.Forms.TextBox();
             this.lblTitel = new System.Windows.Forms.Label();
             this.txtNumber = new System.Windows.Forms.TextBox();
             this.lblNumber = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picItem = new System.Windows.Forms.PictureBox();
             this.buttonPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnPause = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.adminPanel = new System.Windows.Forms.Panel();
             this.panelEditTimer = new System.Windows.Forms.Panel();
             this.comboBoxTimer = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnOKTimer = new System.Windows.Forms.Button();
             this.lblTimerEdit = new System.Windows.Forms.Label();
             this.panelEditInterval = new System.Windows.Forms.Panel();
-            this.OKInterval = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.btnOKInterval = new System.Windows.Forms.Button();
+            this.lblSetInterval = new System.Windows.Forms.Label();
+            this.txtSetInterval = new System.Windows.Forms.TextBox();
             this.lblAdminTools = new System.Windows.Forms.Label();
+            this.lblPercent = new System.Windows.Forms.Label();
             this.leftPanel.SuspendLayout();
             this.StartAuctionPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
             this.centralPanel.SuspendLayout();
-            this.TimerPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.timerPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picItem)).BeginInit();
             this.buttonPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.adminPanel.SuspendLayout();
             this.panelEditTimer.SuspendLayout();
             this.panelEditInterval.SuspendLayout();
             this.SuspendLayout();
@@ -91,7 +92,7 @@
             this.leftPanel.Controls.Add(this.StartAuctionPanel);
             this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.leftPanel.Location = new System.Drawing.Point(0, 0);
-            this.leftPanel.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.leftPanel.Margin = new System.Windows.Forms.Padding(8);
             this.leftPanel.Name = "leftPanel";
             this.leftPanel.Size = new System.Drawing.Size(150, 561);
             this.leftPanel.TabIndex = 1;
@@ -121,7 +122,7 @@
             this.StartAuctionPanel.Controls.Add(this.btnStartAuction);
             this.StartAuctionPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.StartAuctionPanel.Location = new System.Drawing.Point(0, 0);
-            this.StartAuctionPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StartAuctionPanel.Margin = new System.Windows.Forms.Padding(2);
             this.StartAuctionPanel.Name = "StartAuctionPanel";
             this.StartAuctionPanel.Size = new System.Drawing.Size(150, 81);
             this.StartAuctionPanel.TabIndex = 0;
@@ -140,7 +141,7 @@
             // 
             this.btnStartAuction.AutoSize = true;
             this.btnStartAuction.Location = new System.Drawing.Point(34, 46);
-            this.btnStartAuction.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStartAuction.Margin = new System.Windows.Forms.Padding(2);
             this.btnStartAuction.Name = "btnStartAuction";
             this.btnStartAuction.Size = new System.Drawing.Size(78, 23);
             this.btnStartAuction.TabIndex = 1;
@@ -171,7 +172,7 @@
             // listBid
             // 
             this.listBid.Location = new System.Drawing.Point(16, 33);
-            this.listBid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBid.Margin = new System.Windows.Forms.Padding(2);
             this.listBid.Name = "listBid";
             this.listBid.Size = new System.Drawing.Size(126, 484);
             this.listBid.TabIndex = 0;
@@ -181,7 +182,7 @@
             // 
             this.centralPanel.Controls.Add(this.txtInterval);
             this.centralPanel.Controls.Add(this.lblInterval);
-            this.centralPanel.Controls.Add(this.TimerPanel);
+            this.centralPanel.Controls.Add(this.timerPanel);
             this.centralPanel.Controls.Add(this.txtDescription);
             this.centralPanel.Controls.Add(this.lblDkk2);
             this.centralPanel.Controls.Add(this.txtLatestBid);
@@ -190,18 +191,18 @@
             this.centralPanel.Controls.Add(this.textBox3);
             this.centralPanel.Controls.Add(this.lblMinPrice);
             this.centralPanel.Controls.Add(this.lblDescription);
-            this.centralPanel.Controls.Add(this.textBox1);
+            this.centralPanel.Controls.Add(this.txtArtist);
             this.centralPanel.Controls.Add(this.lblArtist);
             this.centralPanel.Controls.Add(this.txtTitel);
             this.centralPanel.Controls.Add(this.lblTitel);
             this.centralPanel.Controls.Add(this.txtNumber);
             this.centralPanel.Controls.Add(this.lblNumber);
-            this.centralPanel.Controls.Add(this.pictureBox1);
+            this.centralPanel.Controls.Add(this.picItem);
             this.centralPanel.Controls.Add(this.buttonPanel);
-            this.centralPanel.Controls.Add(this.panel1);
+            this.centralPanel.Controls.Add(this.adminPanel);
             this.centralPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.centralPanel.Location = new System.Drawing.Point(150, 0);
-            this.centralPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.centralPanel.Margin = new System.Windows.Forms.Padding(2);
             this.centralPanel.Name = "centralPanel";
             this.centralPanel.Size = new System.Drawing.Size(560, 561);
             this.centralPanel.TabIndex = 3;
@@ -209,7 +210,7 @@
             // txtInterval
             // 
             this.txtInterval.Location = new System.Drawing.Point(311, 357);
-            this.txtInterval.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtInterval.Margin = new System.Windows.Forms.Padding(2);
             this.txtInterval.Name = "txtInterval";
             this.txtInterval.ReadOnly = true;
             this.txtInterval.Size = new System.Drawing.Size(76, 20);
@@ -225,14 +226,14 @@
             this.lblInterval.TabIndex = 22;
             this.lblInterval.Text = "Interval:";
             // 
-            // TimerPanel
+            // timerPanel
             // 
-            this.TimerPanel.Controls.Add(this.lblTimer);
-            this.TimerPanel.Location = new System.Drawing.Point(249, 5);
-            this.TimerPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.TimerPanel.Name = "TimerPanel";
-            this.TimerPanel.Size = new System.Drawing.Size(150, 32);
-            this.TimerPanel.TabIndex = 21;
+            this.timerPanel.Controls.Add(this.lblTimer);
+            this.timerPanel.Location = new System.Drawing.Point(249, 5);
+            this.timerPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.timerPanel.Name = "timerPanel";
+            this.timerPanel.Size = new System.Drawing.Size(150, 32);
+            this.timerPanel.TabIndex = 21;
             // 
             // lblTimer
             // 
@@ -247,7 +248,7 @@
             // txtDescription
             // 
             this.txtDescription.Location = new System.Drawing.Point(74, 430);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.ReadOnly = true;
@@ -267,7 +268,7 @@
             // txtLatestBid
             // 
             this.txtLatestBid.Location = new System.Drawing.Point(311, 406);
-            this.txtLatestBid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLatestBid.Margin = new System.Windows.Forms.Padding(2);
             this.txtLatestBid.Name = "txtLatestBid";
             this.txtLatestBid.ReadOnly = true;
             this.txtLatestBid.Size = new System.Drawing.Size(65, 20);
@@ -296,7 +297,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(311, 381);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(65, 20);
@@ -322,14 +323,14 @@
             this.lblDescription.TabIndex = 12;
             this.lblDescription.Text = "Beskrivelse:";
             // 
-            // textBox1
+            // txtArtist
             // 
-            this.textBox1.Location = new System.Drawing.Point(74, 403);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(139, 20);
-            this.textBox1.TabIndex = 11;
+            this.txtArtist.Location = new System.Drawing.Point(74, 403);
+            this.txtArtist.Margin = new System.Windows.Forms.Padding(2);
+            this.txtArtist.Name = "txtArtist";
+            this.txtArtist.ReadOnly = true;
+            this.txtArtist.Size = new System.Drawing.Size(139, 20);
+            this.txtArtist.TabIndex = 11;
             // 
             // lblArtist
             // 
@@ -344,7 +345,7 @@
             // txtTitel
             // 
             this.txtTitel.Location = new System.Drawing.Point(74, 380);
-            this.txtTitel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTitel.Margin = new System.Windows.Forms.Padding(2);
             this.txtTitel.Name = "txtTitel";
             this.txtTitel.ReadOnly = true;
             this.txtTitel.Size = new System.Drawing.Size(139, 20);
@@ -363,7 +364,7 @@
             // txtNumber
             // 
             this.txtNumber.Location = new System.Drawing.Point(74, 357);
-            this.txtNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.ReadOnly = true;
             this.txtNumber.Size = new System.Drawing.Size(76, 20);
@@ -379,14 +380,14 @@
             this.lblNumber.TabIndex = 6;
             this.lblNumber.Text = "Nr.:";
             // 
-            // pictureBox1
+            // picItem
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(10, 46);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(389, 284);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.picItem.Location = new System.Drawing.Point(10, 46);
+            this.picItem.Margin = new System.Windows.Forms.Padding(2);
+            this.picItem.Name = "picItem";
+            this.picItem.Size = new System.Drawing.Size(389, 284);
+            this.picItem.TabIndex = 5;
+            this.picItem.TabStop = false;
             // 
             // buttonPanel
             // 
@@ -396,7 +397,7 @@
             this.buttonPanel.Controls.Add(this.btnNext);
             this.buttonPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.buttonPanel.Location = new System.Drawing.Point(0, 480);
-            this.buttonPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonPanel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPanel.Name = "buttonPanel";
             this.buttonPanel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.buttonPanel.Size = new System.Drawing.Size(409, 81);
@@ -405,7 +406,7 @@
             // btnStart
             // 
             this.btnStart.Location = new System.Drawing.Point(351, 2);
-            this.btnStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(2);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(56, 19);
             this.btnStart.TabIndex = 0;
@@ -415,7 +416,7 @@
             // btnPause
             // 
             this.btnPause.Location = new System.Drawing.Point(291, 2);
-            this.btnPause.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPause.Margin = new System.Windows.Forms.Padding(2);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(56, 19);
             this.btnPause.TabIndex = 1;
@@ -425,7 +426,7 @@
             // btnStop
             // 
             this.btnStop.Location = new System.Drawing.Point(231, 2);
-            this.btnStop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStop.Margin = new System.Windows.Forms.Padding(2);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(56, 19);
             this.btnStop.TabIndex = 2;
@@ -435,33 +436,33 @@
             // btnNext
             // 
             this.btnNext.Location = new System.Drawing.Point(171, 2);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(2);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(56, 19);
             this.btnNext.TabIndex = 3;
             this.btnNext.Text = "Næste";
             this.btnNext.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // adminPanel
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.panelEditTimer);
-            this.panel1.Controls.Add(this.panelEditInterval);
-            this.panel1.Controls.Add(this.lblAdminTools);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(409, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(151, 561);
-            this.panel1.TabIndex = 1;
+            this.adminPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.adminPanel.Controls.Add(this.panelEditTimer);
+            this.adminPanel.Controls.Add(this.panelEditInterval);
+            this.adminPanel.Controls.Add(this.lblAdminTools);
+            this.adminPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.adminPanel.Location = new System.Drawing.Point(409, 0);
+            this.adminPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.adminPanel.Name = "adminPanel";
+            this.adminPanel.Size = new System.Drawing.Size(151, 561);
+            this.adminPanel.TabIndex = 1;
             // 
             // panelEditTimer
             // 
             this.panelEditTimer.Controls.Add(this.comboBoxTimer);
-            this.panelEditTimer.Controls.Add(this.button1);
+            this.panelEditTimer.Controls.Add(this.btnOKTimer);
             this.panelEditTimer.Controls.Add(this.lblTimerEdit);
             this.panelEditTimer.Location = new System.Drawing.Point(5, 25);
-            this.panelEditTimer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelEditTimer.Margin = new System.Windows.Forms.Padding(2);
             this.panelEditTimer.Name = "panelEditTimer";
             this.panelEditTimer.Size = new System.Drawing.Size(130, 74);
             this.panelEditTimer.TabIndex = 26;
@@ -470,20 +471,20 @@
             // 
             this.comboBoxTimer.FormattingEnabled = true;
             this.comboBoxTimer.Location = new System.Drawing.Point(44, 14);
-            this.comboBoxTimer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxTimer.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxTimer.Name = "comboBoxTimer";
             this.comboBoxTimer.Size = new System.Drawing.Size(83, 21);
             this.comboBoxTimer.TabIndex = 25;
             // 
-            // button1
+            // btnOKTimer
             // 
-            this.button1.Location = new System.Drawing.Point(73, 53);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 19);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnOKTimer.Location = new System.Drawing.Point(73, 53);
+            this.btnOKTimer.Margin = new System.Windows.Forms.Padding(2);
+            this.btnOKTimer.Name = "btnOKTimer";
+            this.btnOKTimer.Size = new System.Drawing.Size(56, 19);
+            this.btnOKTimer.TabIndex = 24;
+            this.btnOKTimer.Text = "OK";
+            this.btnOKTimer.UseVisualStyleBackColor = true;
             // 
             // lblTimerEdit
             // 
@@ -497,42 +498,43 @@
             // 
             // panelEditInterval
             // 
-            this.panelEditInterval.Controls.Add(this.OKInterval);
-            this.panelEditInterval.Controls.Add(this.label1);
-            this.panelEditInterval.Controls.Add(this.textBox4);
+            this.panelEditInterval.Controls.Add(this.lblPercent);
+            this.panelEditInterval.Controls.Add(this.btnOKInterval);
+            this.panelEditInterval.Controls.Add(this.lblSetInterval);
+            this.panelEditInterval.Controls.Add(this.txtSetInterval);
             this.panelEditInterval.Location = new System.Drawing.Point(5, 114);
-            this.panelEditInterval.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelEditInterval.Margin = new System.Windows.Forms.Padding(2);
             this.panelEditInterval.Name = "panelEditInterval";
             this.panelEditInterval.Size = new System.Drawing.Size(130, 74);
             this.panelEditInterval.TabIndex = 25;
             // 
-            // OKInterval
+            // btnOKInterval
             // 
-            this.OKInterval.Location = new System.Drawing.Point(73, 53);
-            this.OKInterval.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.OKInterval.Name = "OKInterval";
-            this.OKInterval.Size = new System.Drawing.Size(56, 19);
-            this.OKInterval.TabIndex = 24;
-            this.OKInterval.Text = "OK";
-            this.OKInterval.UseVisualStyleBackColor = true;
+            this.btnOKInterval.Location = new System.Drawing.Point(73, 53);
+            this.btnOKInterval.Margin = new System.Windows.Forms.Padding(2);
+            this.btnOKInterval.Name = "btnOKInterval";
+            this.btnOKInterval.Size = new System.Drawing.Size(56, 19);
+            this.btnOKInterval.TabIndex = 24;
+            this.btnOKInterval.Text = "OK";
+            this.btnOKInterval.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblSetInterval
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Interval:";
+            this.lblSetInterval.AutoSize = true;
+            this.lblSetInterval.Location = new System.Drawing.Point(3, 20);
+            this.lblSetInterval.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSetInterval.Name = "lblSetInterval";
+            this.lblSetInterval.Size = new System.Drawing.Size(45, 13);
+            this.lblSetInterval.TabIndex = 22;
+            this.lblSetInterval.Text = "Interval:";
             // 
-            // textBox4
+            // txtSetInterval
             // 
-            this.textBox4.Location = new System.Drawing.Point(51, 17);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(76, 20);
-            this.textBox4.TabIndex = 0;
+            this.txtSetInterval.Location = new System.Drawing.Point(51, 17);
+            this.txtSetInterval.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSetInterval.Name = "txtSetInterval";
+            this.txtSetInterval.Size = new System.Drawing.Size(52, 20);
+            this.txtSetInterval.TabIndex = 0;
             // 
             // lblAdminTools
             // 
@@ -544,6 +546,15 @@
             this.lblAdminTools.TabIndex = 0;
             this.lblAdminTools.Text = "Admin værktøjer";
             // 
+            // lblPercent
+            // 
+            this.lblPercent.AutoSize = true;
+            this.lblPercent.Location = new System.Drawing.Point(104, 20);
+            this.lblPercent.Name = "lblPercent";
+            this.lblPercent.Size = new System.Drawing.Size(15, 13);
+            this.lblPercent.TabIndex = 25;
+            this.lblPercent.Text = "%";
+            // 
             // StartAuction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -552,7 +563,7 @@
             this.Controls.Add(this.centralPanel);
             this.Controls.Add(this.rightPanel);
             this.Controls.Add(this.leftPanel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "StartAuction";
             this.Text = "Start Auktion";
@@ -564,12 +575,12 @@
             this.rightPanel.PerformLayout();
             this.centralPanel.ResumeLayout(false);
             this.centralPanel.PerformLayout();
-            this.TimerPanel.ResumeLayout(false);
-            this.TimerPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.timerPanel.ResumeLayout(false);
+            this.timerPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picItem)).EndInit();
             this.buttonPanel.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.adminPanel.ResumeLayout(false);
+            this.adminPanel.PerformLayout();
             this.panelEditTimer.ResumeLayout(false);
             this.panelEditTimer.PerformLayout();
             this.panelEditInterval.ResumeLayout(false);
@@ -590,26 +601,26 @@
         private System.Windows.Forms.Label lblBid;
         private System.Windows.Forms.TextBox txtNumber;
         private System.Windows.Forms.Label lblNumber;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picItem;
         private System.Windows.Forms.FlowLayoutPanel buttonPanel;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnPause;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel adminPanel;
         private System.Windows.Forms.Label lblAdminTools;
         private System.Windows.Forms.Label lblLatestBid;
         private System.Windows.Forms.Label lblDkk;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label lblMinPrice;
         private System.Windows.Forms.Label lblDescription;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtArtist;
         private System.Windows.Forms.Label lblArtist;
         private System.Windows.Forms.TextBox txtTitel;
         private System.Windows.Forms.Label lblTitel;
         private System.Windows.Forms.Label lblDkk2;
         private System.Windows.Forms.TextBox txtLatestBid;
-        private System.Windows.Forms.Panel TimerPanel;
+        private System.Windows.Forms.Panel timerPanel;
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label lblItems;
@@ -617,12 +628,13 @@
         private System.Windows.Forms.Label lblInterval;
         private System.Windows.Forms.Panel panelEditTimer;
         private System.Windows.Forms.ComboBox comboBoxTimer;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnOKTimer;
         private System.Windows.Forms.Label lblTimerEdit;
         private System.Windows.Forms.Panel panelEditInterval;
-        private System.Windows.Forms.Button OKInterval;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button btnOKInterval;
+        private System.Windows.Forms.Label lblSetInterval;
+        private System.Windows.Forms.TextBox txtSetInterval;
         private System.Windows.Forms.Label lblAuctionName;
+        private System.Windows.Forms.Label lblPercent;
     }
 }
