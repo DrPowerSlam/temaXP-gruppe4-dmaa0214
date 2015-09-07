@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TemaXP.ModelLayer
 {
     public class Member
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         public String Name { get; set; }
         public String Department { get; set; }
@@ -17,8 +19,11 @@ namespace TemaXP.ModelLayer
 
         //ik mere end 5 års kontigent i points. 50(om måneden)*12(1 år)*5(5 år)
         public int Points { get; set; }
-        
+
         public List<Bid> Bids { get; set; }
+
+        [ForeignKey("Auction")]
+        public int? AuctionID { get; set; }
         public Auction Auction { get; set; }
 
         // bool admin?

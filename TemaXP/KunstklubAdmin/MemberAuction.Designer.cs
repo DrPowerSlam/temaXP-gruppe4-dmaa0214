@@ -48,6 +48,8 @@
             this.txtBidPrice = new System.Windows.Forms.TextBox();
             this.txtBidMember = new System.Windows.Forms.TextBox();
             this.lblDKK = new System.Windows.Forms.Label();
+            this.lblLatestBid = new System.Windows.Forms.Label();
+            this.lblBidByMember = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picItem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -223,11 +225,31 @@
             this.lblDKK.TabIndex = 24;
             this.lblDKK.Text = "DKK";
             // 
+            // lblLatestBid
+            // 
+            this.lblLatestBid.AutoSize = true;
+            this.lblLatestBid.Location = new System.Drawing.Point(149, 362);
+            this.lblLatestBid.Name = "lblLatestBid";
+            this.lblLatestBid.Size = new System.Drawing.Size(67, 13);
+            this.lblLatestBid.TabIndex = 25;
+            this.lblLatestBid.Text = "Højeste bud:";
+            // 
+            // lblBidByMember
+            // 
+            this.lblBidByMember.AutoSize = true;
+            this.lblBidByMember.Location = new System.Drawing.Point(262, 362);
+            this.lblBidByMember.Name = "lblBidByMember";
+            this.lblBidByMember.Size = new System.Drawing.Size(36, 13);
+            this.lblBidByMember.TabIndex = 26;
+            this.lblBidByMember.Text = "Navn:";
+            // 
             // MemberAuction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(862, 561);
+            this.Controls.Add(this.lblBidByMember);
+            this.Controls.Add(this.lblLatestBid);
             this.Controls.Add(this.lblDKK);
             this.Controls.Add(this.txtBidMember);
             this.Controls.Add(this.txtBidPrice);
@@ -280,6 +302,8 @@
         private System.Windows.Forms.TextBox txtBidPrice;
         private System.Windows.Forms.TextBox txtBidMember;
         private System.Windows.Forms.Label lblDKK;
+        private System.Windows.Forms.Label lblLatestBid;
+        private System.Windows.Forms.Label lblBidByMember;
     }
 }
 

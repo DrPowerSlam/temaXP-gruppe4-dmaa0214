@@ -23,10 +23,17 @@ namespace Tests
                 new Member(),
             };
 
+            List<Item> Items = new List<Item>()
+            {
+                new Item {Number = 1245},
+                new Item {Number = 1246},
+            };
+
             auction = new Auction()
             {
                 Date = DateTime.Now,
                 Members = members,
+                Items = Items
             };
         }
 
