@@ -25,15 +25,15 @@ namespace Tests
 
             List<Item> Items = new List<Item>()
             {
-                new Item {Number = 1245},
-                new Item {Number = 1246},
+                new Item () {Number = 1245},
+                new Item () {Number = 1246},
             };
 
             auction = new Auction()
             {
                 Date = DateTime.Now,
-                Members = members,
-                Items = Items
+                //Members = members,
+                //Items = Items
             };
         }
 
@@ -52,6 +52,7 @@ namespace Tests
             Assert.AreEqual(auction.ID, foundAuction.ID);
             ctr.DeleteAuction(foundAuction.ID);
         }
+
 
     }
 }

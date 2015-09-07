@@ -68,11 +68,11 @@
             this.btnOKTimer = new System.Windows.Forms.Button();
             this.lblTimerEdit = new System.Windows.Forms.Label();
             this.panelEditInterval = new System.Windows.Forms.Panel();
+            this.lblPercent = new System.Windows.Forms.Label();
             this.btnOKInterval = new System.Windows.Forms.Button();
             this.lblSetInterval = new System.Windows.Forms.Label();
             this.txtSetInterval = new System.Windows.Forms.TextBox();
             this.lblAdminTools = new System.Windows.Forms.Label();
-            this.lblPercent = new System.Windows.Forms.Label();
             this.leftPanel.SuspendLayout();
             this.StartAuctionPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
@@ -115,6 +115,7 @@
             this.listItem.Size = new System.Drawing.Size(124, 406);
             this.listItem.TabIndex = 2;
             this.listItem.UseCompatibleStateImageBehavior = false;
+            this.listItem.View = System.Windows.Forms.View.List;
             // 
             // StartAuctionPanel
             // 
@@ -147,6 +148,7 @@
             this.btnStartAuction.TabIndex = 1;
             this.btnStartAuction.Text = "Start Auktion";
             this.btnStartAuction.UseVisualStyleBackColor = true;
+            this.btnStartAuction.Click += new System.EventHandler(this.btnStartAuction_Click);
             // 
             // rightPanel
             // 
@@ -508,6 +510,15 @@
             this.panelEditInterval.Size = new System.Drawing.Size(130, 74);
             this.panelEditInterval.TabIndex = 25;
             // 
+            // lblPercent
+            // 
+            this.lblPercent.AutoSize = true;
+            this.lblPercent.Location = new System.Drawing.Point(104, 20);
+            this.lblPercent.Name = "lblPercent";
+            this.lblPercent.Size = new System.Drawing.Size(15, 13);
+            this.lblPercent.TabIndex = 25;
+            this.lblPercent.Text = "%";
+            // 
             // btnOKInterval
             // 
             this.btnOKInterval.Location = new System.Drawing.Point(73, 53);
@@ -545,15 +556,6 @@
             this.lblAdminTools.Size = new System.Drawing.Size(84, 13);
             this.lblAdminTools.TabIndex = 0;
             this.lblAdminTools.Text = "Admin værktøjer";
-            // 
-            // lblPercent
-            // 
-            this.lblPercent.AutoSize = true;
-            this.lblPercent.Location = new System.Drawing.Point(104, 20);
-            this.lblPercent.Name = "lblPercent";
-            this.lblPercent.Size = new System.Drawing.Size(15, 13);
-            this.lblPercent.TabIndex = 25;
-            this.lblPercent.Text = "%";
             // 
             // StartAuction
             // 

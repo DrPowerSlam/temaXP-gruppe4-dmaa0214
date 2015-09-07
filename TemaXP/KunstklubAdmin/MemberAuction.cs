@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using TemaXP.CtrLayer;
+using TemaXP.ModelLayer;
 
 namespace KunstklubAdmin
 {
@@ -8,6 +10,13 @@ namespace KunstklubAdmin
         public MemberAuction()
         {
             InitializeComponent();
+            foreach (Item artPiece in new ItemCtr().GetAllItems())
+            {
+                ListViewItem lvItem = new ListViewItem();
+                lvItem.Text = artPiece.Author + ": " + artPiece.Title;
+                lvItem.Tag = artPiece;
+                listItem.Items.Add(lvItem);
+            }
         }
 
         private void opretToolStripMenuItem_Click(object sender, EventArgs e)
