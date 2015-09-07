@@ -12,7 +12,7 @@ namespace TemaXP.ModelLayer
         public String Title { get; set; }
         public int Year { get; set; }
 
-        // 4 ciphers
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         [Index (IsUnique = true), Range(1000, 9999)]
         public int Number { get; set; }
@@ -21,6 +21,10 @@ namespace TemaXP.ModelLayer
         public int Interval { get; set; }
         public String Image { get; set; }
         public double MinPrice { get; set; }
+
+        [ForeignKey("Auction")]
+        public int? AuctionID { get; set; }
+        public Auction Auction { get; set; }
 
         // Perhaps unneeded
         public bool Sold { get; set; }
