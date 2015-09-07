@@ -17,6 +17,7 @@ namespace TemaXP.ModelLayer
         public int Points { get; set; }
 
         public List<Bid> Bids { get; set; }
+        public Auction Auction { get; set; }
 
         // bool admin?
     }
