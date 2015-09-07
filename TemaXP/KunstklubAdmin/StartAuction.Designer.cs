@@ -118,6 +118,7 @@
             this.listItem.Size = new System.Drawing.Size(124, 406);
             this.listItem.TabIndex = 2;
             this.listItem.UseCompatibleStateImageBehavior = false;
+            this.listItem.View = System.Windows.Forms.View.List;
             // 
             // StartAuctionPanel
             // 
@@ -150,6 +151,7 @@
             this.btnStartAuction.TabIndex = 1;
             this.btnStartAuction.Text = "Start Auktion";
             this.btnStartAuction.UseVisualStyleBackColor = true;
+            this.btnStartAuction.Click += new System.EventHandler(this.btnStartAuction_Click);
             // 
             // rightPanel
             // 
@@ -560,10 +562,14 @@
             this.lblAdminTools.TabIndex = 0;
             this.lblAdminTools.Text = "Admin værktøjer";
             // 
-            // timer
+            // lblPercent
             // 
-            this.timer.Enabled = true;
-            this.timer.Interval = 10;
+            this.lblPercent.AutoSize = true;
+            this.lblPercent.Location = new System.Drawing.Point(104, 20);
+            this.lblPercent.Name = "lblPercent";
+            this.lblPercent.Size = new System.Drawing.Size(15, 13);
+            this.lblPercent.TabIndex = 25;
+            this.lblPercent.Text = "%";
             // 
             // txtEditTimer
             // 

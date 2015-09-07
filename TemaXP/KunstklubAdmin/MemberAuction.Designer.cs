@@ -78,6 +78,7 @@
             this.listItem.Size = new System.Drawing.Size(96, 487);
             this.listItem.TabIndex = 3;
             this.listItem.UseCompatibleStateImageBehavior = false;
+            this.listItem.View = System.Windows.Forms.View.List;
             // 
             // picItem
             // 

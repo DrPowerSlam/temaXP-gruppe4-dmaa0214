@@ -50,11 +50,5 @@ namespace Tests
             ctr.DeleteMember(foundMember.ID);
         }
 
-
-        [TestMethod]
-        public void FindMember(int id)
-        {
-
-        }
     }
 }
