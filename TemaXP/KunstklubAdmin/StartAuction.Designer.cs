@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.leftPanel = new System.Windows.Forms.Panel();
             this.lblItems = new System.Windows.Forms.Label();
             this.listItem = new System.Windows.Forms.ListView();
@@ -68,11 +69,12 @@
             this.btnOKTimer = new System.Windows.Forms.Button();
             this.lblTimerEdit = new System.Windows.Forms.Label();
             this.panelEditInterval = new System.Windows.Forms.Panel();
+            this.lblPercent = new System.Windows.Forms.Label();
             this.btnOKInterval = new System.Windows.Forms.Button();
             this.lblSetInterval = new System.Windows.Forms.Label();
             this.txtSetInterval = new System.Windows.Forms.TextBox();
             this.lblAdminTools = new System.Windows.Forms.Label();
-            this.lblPercent = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.leftPanel.SuspendLayout();
             this.StartAuctionPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
@@ -412,6 +414,7 @@
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // btnPause
             // 
@@ -422,6 +425,7 @@
             this.btnPause.TabIndex = 1;
             this.btnPause.Text = "Pause";
             this.btnPause.UseVisualStyleBackColor = true;
+            this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
             // 
             // btnStop
             // 
@@ -485,6 +489,7 @@
             this.btnOKTimer.TabIndex = 24;
             this.btnOKTimer.Text = "OK";
             this.btnOKTimer.UseVisualStyleBackColor = true;
+            this.btnOKTimer.Click += new System.EventHandler(this.btnOKTimer_Click);
             // 
             // lblTimerEdit
             // 
@@ -507,6 +512,15 @@
             this.panelEditInterval.Name = "panelEditInterval";
             this.panelEditInterval.Size = new System.Drawing.Size(130, 74);
             this.panelEditInterval.TabIndex = 25;
+            // 
+            // lblPercent
+            // 
+            this.lblPercent.AutoSize = true;
+            this.lblPercent.Location = new System.Drawing.Point(104, 20);
+            this.lblPercent.Name = "lblPercent";
+            this.lblPercent.Size = new System.Drawing.Size(15, 13);
+            this.lblPercent.TabIndex = 25;
+            this.lblPercent.Text = "%";
             // 
             // btnOKInterval
             // 
@@ -546,14 +560,10 @@
             this.lblAdminTools.TabIndex = 0;
             this.lblAdminTools.Text = "Admin værktøjer";
             // 
-            // lblPercent
+            // timer
             // 
-            this.lblPercent.AutoSize = true;
-            this.lblPercent.Location = new System.Drawing.Point(104, 20);
-            this.lblPercent.Name = "lblPercent";
-            this.lblPercent.Size = new System.Drawing.Size(15, 13);
-            this.lblPercent.TabIndex = 25;
-            this.lblPercent.Text = "%";
+            this.timer.Enabled = true;
+            this.timer.Interval = 10;
             // 
             // StartAuction
             // 
@@ -636,5 +646,9 @@
         private System.Windows.Forms.TextBox txtSetInterval;
         private System.Windows.Forms.Label lblAuctionName;
         private System.Windows.Forms.Label lblPercent;
+        private System.Windows.Forms.Timer timer;
+
+
     }
+
 }
