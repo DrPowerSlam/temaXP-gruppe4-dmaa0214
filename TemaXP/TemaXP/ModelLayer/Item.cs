@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TemaXP.ModelLayer
 {
@@ -12,7 +14,8 @@ namespace TemaXP.ModelLayer
 
         // 4 ciphers
         public int ID { get; set; }
-
+        [Index (IsUnique = true), Range(1000, 9999)]
+        public int Number { get; set; }
         public String Description { get; set; }
         public double PurchasePrice { get; set; }
         public int Interval { get; set; }
@@ -27,10 +30,11 @@ namespace TemaXP.ModelLayer
             Author = "Ukendt";
         }
 
-        public Item(string author, string title, int year,
+        public Item(int number, string author, string title, int year,
             string description, double purchasePrice, int interval,
             string image, double minPrice)
         {
+            Number = number;
             Author = author;
             Title = title;
             Year = year;
