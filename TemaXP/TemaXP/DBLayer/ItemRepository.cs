@@ -6,9 +6,9 @@ namespace TemaXP.DBLayer
 {
     public class ItemRepository : SuperRepository
     {
-        public void InsertItem(Item Item)
+        public void InsertItem(Item item)
         {
-            context.Items.Add(Item);
+            context.Items.Add(item);
             Save();
         }
 
