@@ -16,7 +16,7 @@ namespace KunstklubAdmin
             timer.Interval = 1000;
             timer.Tick += TimerTick;
 
-            comboBoxTimer.Text = timeLeft.ToString();
+            txtEditTimer.Text = timeLeft.ToString();
         }
 
         private void StartTimer()
@@ -25,7 +25,7 @@ namespace KunstklubAdmin
         }
 
         // TODO evt ændre til minutter
-        private void ChangeTimer(int seconds)
+        private void EditTimer(int seconds)
         {
             timeLeft = seconds;
         }
@@ -35,6 +35,7 @@ namespace KunstklubAdmin
             timer.Stop();
         }
 
+        //TODO EndItem
         // This method runs when the timer reaches zero 
         // or the auctioneer ends the bidding
         private void EndItem(Item item)
@@ -50,7 +51,6 @@ namespace KunstklubAdmin
             if (timeLeft <= 0)
             {
                 timer.Stop();
-                //TODO EndItem(item);
             }
 
             lblTimer.Text = timeLeft.ToString();
@@ -68,7 +68,20 @@ namespace KunstklubAdmin
 
         private void btnOKTimer_Click(object sender, EventArgs e)
         {
-            ChangeTimer(Int32.Parse(comboBoxTimer.Text));
+            EditTimer(Int32.Parse(txtEditTimer.Text));
+        }
+
+        private void btnHammerslag_Click(object sender, EventArgs e)
+        {
+            //TODO EndItem(item);
+        }
+
+        private void txtEditTimer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                EditTimer(Int32.Parse(txtEditTimer.Text));
+            }
         }
     }
 }

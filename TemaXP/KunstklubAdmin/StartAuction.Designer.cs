@@ -61,11 +61,10 @@
             this.buttonPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnPause = new System.Windows.Forms.Button();
-            this.btnStop = new System.Windows.Forms.Button();
+            this.btnHammerslag = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.adminPanel = new System.Windows.Forms.Panel();
             this.panelEditTimer = new System.Windows.Forms.Panel();
-            this.comboBoxTimer = new System.Windows.Forms.ComboBox();
             this.btnOKTimer = new System.Windows.Forms.Button();
             this.lblTimerEdit = new System.Windows.Forms.Label();
             this.panelEditInterval = new System.Windows.Forms.Panel();
@@ -75,6 +74,7 @@
             this.txtSetInterval = new System.Windows.Forms.TextBox();
             this.lblAdminTools = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.txtEditTimer = new System.Windows.Forms.TextBox();
             this.leftPanel.SuspendLayout();
             this.StartAuctionPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
@@ -89,6 +89,7 @@
             // 
             // leftPanel
             // 
+            this.leftPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.leftPanel.Controls.Add(this.lblItems);
             this.leftPanel.Controls.Add(this.listItem);
             this.leftPanel.Controls.Add(this.StartAuctionPanel);
@@ -155,7 +156,7 @@
             this.rightPanel.Controls.Add(this.lblBid);
             this.rightPanel.Controls.Add(this.listBid);
             this.rightPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rightPanel.Location = new System.Drawing.Point(710, 0);
+            this.rightPanel.Location = new System.Drawing.Point(734, 0);
             this.rightPanel.Margin = new System.Windows.Forms.Padding(0);
             this.rightPanel.Name = "rightPanel";
             this.rightPanel.Size = new System.Drawing.Size(150, 561);
@@ -182,6 +183,7 @@
             // 
             // centralPanel
             // 
+            this.centralPanel.AutoSize = true;
             this.centralPanel.Controls.Add(this.txtInterval);
             this.centralPanel.Controls.Add(this.lblInterval);
             this.centralPanel.Controls.Add(this.timerPanel);
@@ -205,8 +207,9 @@
             this.centralPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.centralPanel.Location = new System.Drawing.Point(150, 0);
             this.centralPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.centralPanel.MinimumSize = new System.Drawing.Size(500, 500);
             this.centralPanel.Name = "centralPanel";
-            this.centralPanel.Size = new System.Drawing.Size(560, 561);
+            this.centralPanel.Size = new System.Drawing.Size(584, 561);
             this.centralPanel.TabIndex = 3;
             // 
             // txtInterval
@@ -395,22 +398,23 @@
             // 
             this.buttonPanel.Controls.Add(this.btnStart);
             this.buttonPanel.Controls.Add(this.btnPause);
-            this.buttonPanel.Controls.Add(this.btnStop);
+            this.buttonPanel.Controls.Add(this.btnHammerslag);
             this.buttonPanel.Controls.Add(this.btnNext);
             this.buttonPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.buttonPanel.Location = new System.Drawing.Point(0, 480);
             this.buttonPanel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPanel.Name = "buttonPanel";
             this.buttonPanel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.buttonPanel.Size = new System.Drawing.Size(409, 81);
+            this.buttonPanel.Size = new System.Drawing.Size(443, 81);
             this.buttonPanel.TabIndex = 4;
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(351, 2);
+            this.btnStart.AutoSize = true;
+            this.btnStart.Location = new System.Drawing.Point(385, 2);
             this.btnStart.Margin = new System.Windows.Forms.Padding(2);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(56, 19);
+            this.btnStart.Size = new System.Drawing.Size(56, 23);
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -418,51 +422,56 @@
             // 
             // btnPause
             // 
-            this.btnPause.Location = new System.Drawing.Point(291, 2);
+            this.btnPause.AutoSize = true;
+            this.btnPause.Location = new System.Drawing.Point(325, 2);
             this.btnPause.Margin = new System.Windows.Forms.Padding(2);
             this.btnPause.Name = "btnPause";
-            this.btnPause.Size = new System.Drawing.Size(56, 19);
+            this.btnPause.Size = new System.Drawing.Size(56, 23);
             this.btnPause.TabIndex = 1;
             this.btnPause.Text = "Pause";
             this.btnPause.UseVisualStyleBackColor = true;
             this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
             // 
-            // btnStop
+            // btnHammerslag
             // 
-            this.btnStop.Location = new System.Drawing.Point(231, 2);
-            this.btnStop.Margin = new System.Windows.Forms.Padding(2);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(56, 19);
-            this.btnStop.TabIndex = 2;
-            this.btnStop.Text = "Stop";
-            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnHammerslag.AutoSize = true;
+            this.btnHammerslag.Location = new System.Drawing.Point(246, 2);
+            this.btnHammerslag.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHammerslag.Name = "btnHammerslag";
+            this.btnHammerslag.Size = new System.Drawing.Size(75, 23);
+            this.btnHammerslag.TabIndex = 2;
+            this.btnHammerslag.Text = "Hammerslag";
+            this.btnHammerslag.UseVisualStyleBackColor = true;
+            this.btnHammerslag.Click += new System.EventHandler(this.btnHammerslag_Click);
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(171, 2);
+            this.btnNext.AutoSize = true;
+            this.btnNext.Location = new System.Drawing.Point(186, 2);
             this.btnNext.Margin = new System.Windows.Forms.Padding(2);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(56, 19);
+            this.btnNext.Size = new System.Drawing.Size(56, 23);
             this.btnNext.TabIndex = 3;
             this.btnNext.Text = "Næste";
             this.btnNext.UseVisualStyleBackColor = true;
             // 
             // adminPanel
             // 
+            this.adminPanel.AutoSize = true;
             this.adminPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.adminPanel.Controls.Add(this.panelEditTimer);
             this.adminPanel.Controls.Add(this.panelEditInterval);
             this.adminPanel.Controls.Add(this.lblAdminTools);
             this.adminPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.adminPanel.Location = new System.Drawing.Point(409, 0);
+            this.adminPanel.Location = new System.Drawing.Point(443, 0);
             this.adminPanel.Margin = new System.Windows.Forms.Padding(2);
             this.adminPanel.Name = "adminPanel";
-            this.adminPanel.Size = new System.Drawing.Size(151, 561);
+            this.adminPanel.Size = new System.Drawing.Size(141, 561);
             this.adminPanel.TabIndex = 1;
             // 
             // panelEditTimer
             // 
-            this.panelEditTimer.Controls.Add(this.comboBoxTimer);
+            this.panelEditTimer.Controls.Add(this.txtEditTimer);
             this.panelEditTimer.Controls.Add(this.btnOKTimer);
             this.panelEditTimer.Controls.Add(this.lblTimerEdit);
             this.panelEditTimer.Location = new System.Drawing.Point(5, 25);
@@ -470,15 +479,6 @@
             this.panelEditTimer.Name = "panelEditTimer";
             this.panelEditTimer.Size = new System.Drawing.Size(130, 74);
             this.panelEditTimer.TabIndex = 26;
-            // 
-            // comboBoxTimer
-            // 
-            this.comboBoxTimer.FormattingEnabled = true;
-            this.comboBoxTimer.Location = new System.Drawing.Point(44, 14);
-            this.comboBoxTimer.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxTimer.Name = "comboBoxTimer";
-            this.comboBoxTimer.Size = new System.Drawing.Size(83, 21);
-            this.comboBoxTimer.TabIndex = 25;
             // 
             // btnOKTimer
             // 
@@ -565,16 +565,24 @@
             this.timer.Enabled = true;
             this.timer.Interval = 10;
             // 
+            // txtEditTimer
+            // 
+            this.txtEditTimer.Location = new System.Drawing.Point(44, 17);
+            this.txtEditTimer.Name = "txtEditTimer";
+            this.txtEditTimer.Size = new System.Drawing.Size(74, 20);
+            this.txtEditTimer.TabIndex = 25;
+            this.txtEditTimer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEditTimer_KeyPress);
+            // 
             // StartAuction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(860, 561);
+            this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.centralPanel);
             this.Controls.Add(this.rightPanel);
             this.Controls.Add(this.leftPanel);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(800, 600);
+            this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "StartAuction";
             this.Text = "Start Auktion";
             this.leftPanel.ResumeLayout(false);
@@ -589,6 +597,7 @@
             this.timerPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picItem)).EndInit();
             this.buttonPanel.ResumeLayout(false);
+            this.buttonPanel.PerformLayout();
             this.adminPanel.ResumeLayout(false);
             this.adminPanel.PerformLayout();
             this.panelEditTimer.ResumeLayout(false);
@@ -596,6 +605,7 @@
             this.panelEditInterval.ResumeLayout(false);
             this.panelEditInterval.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -615,7 +625,7 @@
         private System.Windows.Forms.FlowLayoutPanel buttonPanel;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnPause;
-        private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.Button btnHammerslag;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Panel adminPanel;
         private System.Windows.Forms.Label lblAdminTools;
@@ -637,7 +647,6 @@
         private System.Windows.Forms.TextBox txtInterval;
         private System.Windows.Forms.Label lblInterval;
         private System.Windows.Forms.Panel panelEditTimer;
-        private System.Windows.Forms.ComboBox comboBoxTimer;
         private System.Windows.Forms.Button btnOKTimer;
         private System.Windows.Forms.Label lblTimerEdit;
         private System.Windows.Forms.Panel panelEditInterval;
@@ -647,8 +656,7 @@
         private System.Windows.Forms.Label lblAuctionName;
         private System.Windows.Forms.Label lblPercent;
         private System.Windows.Forms.Timer timer;
-
-
+        private System.Windows.Forms.TextBox txtEditTimer;
     }
 
 }
