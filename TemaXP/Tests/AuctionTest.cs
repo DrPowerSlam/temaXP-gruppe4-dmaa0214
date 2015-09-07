@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TemaXP.CtrLayer;
 using TemaXP.ModelLayer;
 
@@ -21,20 +21,19 @@ namespace Tests
             {
                 new Member(),
                 new Member(),
-
             };
 
-            List<Painting> paintings = new List<Painting>()
+            List<Item> Items = new List<Item>()
             {
-                new Painting(),
-                new Painting(),
-            };  
-            
+                new Item(),
+                new Item(),
+            };
+
             auction = new Auction()
             {
                 Date = DateTime.Now,
                 Members = members,
-                Paintings = paintings
+                Items = Items
             };
         }
 

@@ -67,6 +67,7 @@
     <Compile Include="ModelLayer\Auction.cs" />
     <Compile Include="ModelLayer\Bid.cs" />
     <Compile Include="ModelLayer\Member.cs" />
+    <Compile Include="ModelLayer\Item.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

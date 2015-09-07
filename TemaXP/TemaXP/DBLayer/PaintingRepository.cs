@@ -1,36 +1,31 @@
-﻿using System;
-using System.CodeDom;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TemaXP.ModelLayer;
 
 namespace TemaXP.DBLayer
 {
-    public class PaintingRepository : SuperRepository
+    public class ItemRepository : SuperRepository
     {
-
-        public void InsertPainting(Painting painting)
+        public void InsertItem(Item Item)
         {
-            context.Paintings.Add(painting);
+            context.Items.Add(Item);
             Save();
         }
 
-        public Painting FindPainting(int id)
+        public Item FindItem(int id)
         {
-            return context.Paintings.Find(id);
+            return context.Items.Find(id);
         }
 
-        public void DeletePainting(int id)
+        public void DeleteItem(int id)
         {
-            context.Paintings.Remove(FindPainting(id));
+            context.Items.Remove(FindItem(id));
             Save();
         }
 
-        public List<Painting> GetAllPaintings()
+        public List<Item> GetAllItems()
         {
-            return context.Paintings.ToList();
+            return context.Items.ToList();
         }
     }
 }

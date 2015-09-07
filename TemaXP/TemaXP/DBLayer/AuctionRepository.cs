@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TemaXP.ModelLayer;
 
 namespace TemaXP.DBLayer
 {
     public class AuctionRepository : SuperRepository
     {
-
         public void InsertAuction(Auction auction)
         {
             context.Auctions.Add(auction);
