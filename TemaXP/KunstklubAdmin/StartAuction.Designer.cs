@@ -45,10 +45,10 @@
             this.lblTimer = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.lblDkk2 = new System.Windows.Forms.Label();
-            this.txtLatestBid = new System.Windows.Forms.TextBox();
+            this.txtHighestBid = new System.Windows.Forms.TextBox();
             this.lblLatestBid = new System.Windows.Forms.Label();
             this.lblDkk = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtMinPrice = new System.Windows.Forms.TextBox();
             this.lblMinPrice = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
             this.txtArtist = new System.Windows.Forms.TextBox();
@@ -189,10 +189,10 @@
             this.centralPanel.Controls.Add(this.timerPanel);
             this.centralPanel.Controls.Add(this.txtDescription);
             this.centralPanel.Controls.Add(this.lblDkk2);
-            this.centralPanel.Controls.Add(this.txtLatestBid);
+            this.centralPanel.Controls.Add(this.txtHighestBid);
             this.centralPanel.Controls.Add(this.lblLatestBid);
             this.centralPanel.Controls.Add(this.lblDkk);
-            this.centralPanel.Controls.Add(this.textBox3);
+            this.centralPanel.Controls.Add(this.txtMinPrice);
             this.centralPanel.Controls.Add(this.lblMinPrice);
             this.centralPanel.Controls.Add(this.lblDescription);
             this.centralPanel.Controls.Add(this.txtArtist);
@@ -269,14 +269,14 @@
             this.lblDkk2.TabIndex = 19;
             this.lblDkk2.Text = "DKK";
             // 
-            // txtLatestBid
+            // txtHighestBid
             // 
-            this.txtLatestBid.Location = new System.Drawing.Point(311, 406);
-            this.txtLatestBid.Margin = new System.Windows.Forms.Padding(2);
-            this.txtLatestBid.Name = "txtLatestBid";
-            this.txtLatestBid.ReadOnly = true;
-            this.txtLatestBid.Size = new System.Drawing.Size(65, 20);
-            this.txtLatestBid.TabIndex = 18;
+            this.txtHighestBid.Location = new System.Drawing.Point(311, 406);
+            this.txtHighestBid.Margin = new System.Windows.Forms.Padding(2);
+            this.txtHighestBid.Name = "txtHighestBid";
+            this.txtHighestBid.ReadOnly = true;
+            this.txtHighestBid.Size = new System.Drawing.Size(65, 20);
+            this.txtHighestBid.TabIndex = 18;
             // 
             // lblLatestBid
             // 
@@ -298,14 +298,14 @@
             this.lblDkk.TabIndex = 16;
             this.lblDkk.Text = "DKK";
             // 
-            // textBox3
+            // txtMinPrice
             // 
-            this.textBox3.Location = new System.Drawing.Point(311, 381);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(65, 20);
-            this.textBox3.TabIndex = 15;
+            this.txtMinPrice.Location = new System.Drawing.Point(311, 381);
+            this.txtMinPrice.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMinPrice.Name = "txtMinPrice";
+            this.txtMinPrice.ReadOnly = true;
+            this.txtMinPrice.Size = new System.Drawing.Size(65, 20);
+            this.txtMinPrice.TabIndex = 15;
             // 
             // lblMinPrice
             // 
@@ -562,15 +562,6 @@
             this.lblAdminTools.TabIndex = 0;
             this.lblAdminTools.Text = "Admin værktøjer";
             // 
-            // lblPercent
-            // 
-            this.lblPercent.AutoSize = true;
-            this.lblPercent.Location = new System.Drawing.Point(104, 20);
-            this.lblPercent.Name = "lblPercent";
-            this.lblPercent.Size = new System.Drawing.Size(15, 13);
-            this.lblPercent.TabIndex = 25;
-            this.lblPercent.Text = "%";
-            // 
             // StartAuction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -627,7 +618,7 @@
         private System.Windows.Forms.Label lblAdminTools;
         private System.Windows.Forms.Label lblLatestBid;
         private System.Windows.Forms.Label lblDkk;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtMinPrice;
         private System.Windows.Forms.Label lblMinPrice;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.TextBox txtArtist;
@@ -635,7 +626,7 @@
         private System.Windows.Forms.TextBox txtTitel;
         private System.Windows.Forms.Label lblTitel;
         private System.Windows.Forms.Label lblDkk2;
-        private System.Windows.Forms.TextBox txtLatestBid;
+        private System.Windows.Forms.TextBox txtHighestBid;
         private System.Windows.Forms.Panel timerPanel;
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.TextBox txtDescription;
