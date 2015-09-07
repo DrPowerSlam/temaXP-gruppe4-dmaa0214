@@ -53,5 +53,6 @@ namespace Tests
             Assert.AreEqual(auction.ID, foundAuction.ID);
             ctr.DeleteAuction(foundAuction.ID);
         }
+
     }
 }
