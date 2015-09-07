@@ -54,7 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CtrLayer\AuctionCtr.cs" />
-    <Compile Include="CtrLayer\PaintingCtr.cs" />
+    <Compile Include="CtrLayer\ItemCtr.cs" />
     <Compile Include="DBLayer\AuctionRepository.cs" />
     <Compile Include="DBLayer\DBContext.cs" />
     <Compile Include="DBLayer\ItemRepository.cs" />
