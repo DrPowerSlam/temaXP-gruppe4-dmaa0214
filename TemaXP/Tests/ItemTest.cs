@@ -10,7 +10,7 @@ namespace Tests
         private ItemCtr ctr;
         private Item Item;
 
-        //TODO nummer skal være firechifret nummer...
+        
         [TestInitialize]
         public void ItemInitialize()
         {
@@ -18,6 +18,7 @@ namespace Tests
 
             Item = new Item()
             {
+                Number = 1234,
                 Author = "TestAuthor",
                 Description = "TestDescription",
                 Image = "TestImage",
