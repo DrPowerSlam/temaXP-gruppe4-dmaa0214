@@ -29,6 +29,7 @@ namespace TemaXP.CtrLayer
             {
                 CurrentBid.Member.Points -= (CurrentBid.Amount / 3);
                 CurrentBid.Item.Sold = true;
+                CurrentBid = null;
             }
         }
 
