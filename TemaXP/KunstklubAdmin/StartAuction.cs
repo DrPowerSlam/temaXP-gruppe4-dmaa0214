@@ -151,6 +151,8 @@ namespace KunstklubAdmin
         private void btnNext_Click(object sender, EventArgs e)
         {
             HandleNext();
+            btnHammerslag.Enabled = false;
+            btnPause.Enabled = false;
         }
 
         private void HandleNext()
