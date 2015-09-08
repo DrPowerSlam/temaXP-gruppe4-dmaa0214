@@ -39,6 +39,8 @@
             this.lblBid = new System.Windows.Forms.Label();
             this.listBid = new System.Windows.Forms.ListView();
             this.centralPanel = new System.Windows.Forms.Panel();
+            this.txtBidName = new System.Windows.Forms.TextBox();
+            this.lblBidName = new System.Windows.Forms.Label();
             this.txtInterval = new System.Windows.Forms.TextBox();
             this.lblInterval = new System.Windows.Forms.Label();
             this.timerPanel = new System.Windows.Forms.Panel();
@@ -186,6 +188,8 @@
             // centralPanel
             // 
             this.centralPanel.AutoSize = true;
+            this.centralPanel.Controls.Add(this.txtBidName);
+            this.centralPanel.Controls.Add(this.lblBidName);
             this.centralPanel.Controls.Add(this.txtInterval);
             this.centralPanel.Controls.Add(this.lblInterval);
             this.centralPanel.Controls.Add(this.timerPanel);
@@ -214,6 +218,25 @@
             this.centralPanel.Size = new System.Drawing.Size(584, 561);
             this.centralPanel.TabIndex = 3;
             // 
+            // txtBidName
+            // 
+            this.txtBidName.Location = new System.Drawing.Point(311, 430);
+            this.txtBidName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBidName.Name = "txtBidName";
+            this.txtBidName.ReadOnly = true;
+            this.txtBidName.Size = new System.Drawing.Size(65, 20);
+            this.txtBidName.TabIndex = 25;
+            // 
+            // lblBidName
+            // 
+            this.lblBidName.AutoSize = true;
+            this.lblBidName.Location = new System.Drawing.Point(243, 433);
+            this.lblBidName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBidName.Name = "lblBidName";
+            this.lblBidName.Size = new System.Drawing.Size(33, 13);
+            this.lblBidName.TabIndex = 24;
+            this.lblBidName.Text = "Navn";
+            // 
             // txtInterval
             // 
             this.txtInterval.Location = new System.Drawing.Point(311, 357);
@@ -226,7 +249,7 @@
             // lblInterval
             // 
             this.lblInterval.AutoSize = true;
-            this.lblInterval.Location = new System.Drawing.Point(247, 361);
+            this.lblInterval.Location = new System.Drawing.Point(240, 360);
             this.lblInterval.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInterval.Name = "lblInterval";
             this.lblInterval.Size = new System.Drawing.Size(45, 13);
@@ -284,7 +307,7 @@
             // lblLatestBid
             // 
             this.lblLatestBid.AutoSize = true;
-            this.lblLatestBid.Location = new System.Drawing.Point(247, 406);
+            this.lblLatestBid.Location = new System.Drawing.Point(240, 410);
             this.lblLatestBid.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLatestBid.Name = "lblLatestBid";
             this.lblLatestBid.Size = new System.Drawing.Size(67, 13);
@@ -313,7 +336,7 @@
             // lblMinPrice
             // 
             this.lblMinPrice.AutoSize = true;
-            this.lblMinPrice.Location = new System.Drawing.Point(247, 383);
+            this.lblMinPrice.Location = new System.Drawing.Point(240, 383);
             this.lblMinPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMinPrice.Name = "lblMinPrice";
             this.lblMinPrice.Size = new System.Drawing.Size(63, 13);
@@ -489,6 +512,7 @@
             this.txtEditTimer.Name = "txtEditTimer";
             this.txtEditTimer.Size = new System.Drawing.Size(100, 20);
             this.txtEditTimer.TabIndex = 0;
+            this.txtEditTimer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEditTimer_KeyPress);
             // 
             // btnOKTimer
             // 
@@ -541,6 +565,7 @@
             this.btnOKInterval.TabIndex = 24;
             this.btnOKInterval.Text = "OK";
             this.btnOKInterval.UseVisualStyleBackColor = true;
+            this.btnOKInterval.Click += new System.EventHandler(this.btnOKInterval_Click);
             // 
             // lblSetInterval
             // 
@@ -654,6 +679,8 @@
         private System.Windows.Forms.Label lblPercent;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.TextBox txtEditTimer;
+        private System.Windows.Forms.TextBox txtBidName;
+        private System.Windows.Forms.Label lblBidName;
     }
 
 }

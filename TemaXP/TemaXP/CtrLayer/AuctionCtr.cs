@@ -8,9 +8,9 @@ namespace TemaXP.CtrLayer
     public class AuctionCtr
     {
         public int Index { get; set; }
+        public Bid CurrentBid { get; set; }
         public int MaxIndex { get; set; }
 
-        
         private AuctionRepository repos;
 
         public AuctionCtr()
@@ -21,6 +21,15 @@ namespace TemaXP.CtrLayer
         public void InsertAuction(Auction auction)
         {
             repos.InsertAuction(auction);
+        }
+
+        public void RegisterSale()
+        {
+            if (CurrentBid != null)
+            {
+                CurrentBid.Member.Points -= (CurrentBid.Amount / 3);
+                CurrentBid.Item.Sold = true;
+            }
         }
 
         public Auction FindAuction(int id)

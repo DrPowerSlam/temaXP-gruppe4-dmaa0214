@@ -147,9 +147,9 @@ namespace TemaXP.Migrations
 
             var bids = new List<Bid>
             {
-                new Bid {HighestBid = 261, Member = members[0]},
-                new Bid {HighestBid = 290, Member = members[1]},
-                new Bid {HighestBid = 320, Member = members[2]},
+                new Bid {Amount = 261, Member = members[0]},
+                new Bid {Amount = 290, Member = members[1]},
+                new Bid {Amount = 320, Member = members[2]},
             };
 
             //
@@ -186,7 +186,7 @@ namespace TemaXP.Migrations
             foreach (var bid in bids)
             {
                 context.Bids.AddOrUpdate(
-                b => b.HighestBid,
+                b => b.Amount,
                 bid
                 );
             }

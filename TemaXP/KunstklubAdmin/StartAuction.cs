@@ -8,11 +8,12 @@ namespace KunstklubAdmin
     public partial class StartAuction : Form
     {
         private int timeLeft;
-        
+
         private ItemCtr itemCtr = new ItemCtr();
+        private Item currentItem;
 
         private AuctionCtr auctionCtr = new AuctionCtr();
-        
+
 
         public StartAuction()
         {
@@ -30,6 +31,8 @@ namespace KunstklubAdmin
             btnNext.Enabled = false;
             btnPause.Enabled = false;
             btnStart.Enabled = false;
+            btnOKInterval.Enabled = false;
+            btnOKTimer.Enabled = false;
         }
 
         private void StartTimer()
@@ -48,25 +51,22 @@ namespace KunstklubAdmin
             timer.Stop();
         }
 
-        //TODO EndItem
-        // This method runs when the timer reaches zero 
-        // or the auctioneer ends the bidding
-        private void EndItem(Item item)
-        {
-            // Save bid
-            // Get next item
-        }
-
         private void TimerTick(object sender, EventArgs e)
         {
-            timeLeft--;
 
             if (timeLeft <= 0)
             {
                 timer.Stop();
+                lblTimer.Text = "00";
+                HandleHammerslag();
+            }
+            else
+            {
+                timeLeft--;
+                lblTimer.Text = timeLeft.ToString();
             }
 
-            lblTimer.Text = timeLeft.ToString();
+
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -75,6 +75,8 @@ namespace KunstklubAdmin
             //Sørg for at den enable næste knap og pause knap.
             btnHammerslag.Enabled = true;
             btnPause.Enabled = true;
+            btnOKInterval.Enabled = true;
+            btnOKTimer.Enabled = true;
 
             MarkItem();
         }
@@ -92,30 +94,38 @@ namespace KunstklubAdmin
 
         private void btnHammerslag_Click(object sender, EventArgs e)
         {
-            //TODO EndItem(item);
-            btnNext.Enabled = true;
-            MarkItem();
+            HandleHammerslag();
         }
 
-        private void txtEditTimer_KeyPress(object sender, KeyPressEventArgs e)
+        //TODO call as event from "server"
+        private void RegisterBid(Bid bid)
         {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                EditTimer(Int32.Parse(txtEditTimer.Text));
-            }
+            txtHighestBid.Text = bid.Amount.ToString();
+            txtBidName.Text = bid.Member.Name;
+        }
+
+        private void HandleHammerslag()
+        {
+            auctionCtr.RegisterSale();
+            timeLeft = 0;
+            MarkItem();
+
+            btnNext.Enabled = true;
+            btnPause.Enabled = false;
+            btnStart.Enabled = false;
+            btnHammerslag.Enabled = false;
         }
 
         //TODO send en form for notification til MemberAuction om at auction er startet + selected Item
         private void btnStartAuction_Click(object sender, System.EventArgs e)
         {
-            btnStart.Enabled = true;
             HandleStartAuction();
         }
 
         private void HandleStartAuction()
         {
             Auction currentAuction = auctionCtr.GetCurrentAuction();
-            auctionCtr.MaxIndex = currentAuction.Items.Count-1;
+            auctionCtr.MaxIndex = currentAuction.Items.Count - 1;
             if (currentAuction != null && currentAuction.Items.Count > 0)
             {
                 foreach (Item artPiece in currentAuction.Items)
@@ -129,9 +139,14 @@ namespace KunstklubAdmin
 
             listItem.Focus();
             listItem.Items[auctionCtr.Index].Selected = true;
+            ShowItem(GetNextItem());
 
-            Item art = (Item)listItem.Items[auctionCtr.Index].Tag;
-            ShowItem(art);
+            btnStart.Enabled = true;
+        }
+
+        private Item GetNextItem()
+        {
+            return currentItem = (Item)listItem.Items[auctionCtr.Index].Tag;
         }
 
         //TODO tilføj billedfiler
@@ -144,8 +159,7 @@ namespace KunstklubAdmin
             txtDescription.Text = item.Description;
             txtInterval.Text = itemCtr.CalculateInterval(item).ToString();
             txtMinPrice.Text = item.MinPrice.ToString();
-            txtHighestBid.Text = item.MinPrice.ToString();
-
+            //txtHighestBid.Text = item.MinPrice.ToString();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -157,13 +171,12 @@ namespace KunstklubAdmin
 
         private void HandleNext()
         {
-            if(auctionCtr.Index != auctionCtr.MaxIndex)
+            if (auctionCtr.Index != auctionCtr.MaxIndex)
             {
                 ResetSelection();
                 auctionCtr.Index += 1;
                 MarkItem();
-                Item art = (Item)listItem.Items[auctionCtr.Index].Tag;
-                ShowItem(art);
+                ShowItem(GetNextItem());
             }
 
             //stop or do nothing.
@@ -171,7 +184,7 @@ namespace KunstklubAdmin
 
         private void MarkItem()
         {
-            
+
             listItem.Focus();
             listItem.Items[auctionCtr.Index].Selected = true;
         }
@@ -182,7 +195,18 @@ namespace KunstklubAdmin
             listItem.Items[auctionCtr.Index].Selected = false;
         }
 
+        private void btnOKInterval_Click(object sender, EventArgs e)
+        {
+            currentItem.Interval = Convert.ToInt32(txtSetInterval.Text);
+            txtInterval.Text = itemCtr.CalculateInterval(currentItem).ToString();
+        }
 
-        
+        private void txtEditTimer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                EditTimer(Int32.Parse(txtEditTimer.Text));
+            }
+        }
     }
 }

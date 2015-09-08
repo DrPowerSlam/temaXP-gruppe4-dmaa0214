@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TemaXP.DBLayer;
 using TemaXP.ModelLayer;
 
@@ -13,9 +14,14 @@ namespace TemaXP.CtrLayer
             repos = new ItemRepository();
         }
 
-        public void InsertItem(Item Item)
+        public void InsertItem(Item item)
         {
-            repos.InsertItem(Item);
+            if (item.MinPrice != 0 && item.Interval == 0)
+            {
+                item.Interval = Convert.ToInt32(item.MinPrice * 0.1);
+            }
+
+            repos.InsertItem(item);
         }
 
         public Item FindItem(int id)
