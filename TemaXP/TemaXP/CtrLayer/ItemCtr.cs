@@ -32,5 +32,10 @@ namespace TemaXP.CtrLayer
         {
             repos.DeleteItem(id);
         }
+
+        public double CalculateInterval(Item item)
+        {
+            return item.MinPrice * item.Interval / 100;
+        }
     }
 }

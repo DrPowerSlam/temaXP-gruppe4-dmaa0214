@@ -9,6 +9,8 @@ namespace KunstklubAdmin
     {
         private int timeLeft;
 
+        private ItemCtr itemCtr = new ItemCtr();
+
         public StartAuction()
         {
             InitializeComponent();
@@ -85,16 +87,37 @@ namespace KunstklubAdmin
             }
         }
 
-        //TODO send en form for notification til MemberAuction om at auction er startet
+        //TODO send en form for notification til MemberAuction om at auction er startet + selected Item
         private void btnStartAuction_Click(object sender, System.EventArgs e)
         {
-            foreach (Item artPiece in new ItemCtr().GetAllItems())
-            {
+            foreach (Item artPiece in itemCtr.GetAllItems()){
                 ListViewItem lvItem = new ListViewItem();
                 lvItem.Text = artPiece.Author + ": " + artPiece.Title;
                 lvItem.Tag = artPiece;
                 listItem.Items.Add(lvItem);
             }
+
+            listItem.Focus();
+            listItem.Items[0].Selected = true;
+
+            Item art = (Item)listItem.Items[0].Tag;
+            ShowItem(art);
+            
         }
+
+        //TODO tilføj billedfiler
+        private void ShowItem(Item item)
+        {
+            //picItem.ImageLocation...
+
+            txtNumber.Text = item.Number.ToString();
+            txtArtist.Text = item.Author;
+            txtDescription.Text = item.Description;
+            txtInterval.Text = itemCtr.CalculateInterval(item).ToString();
+            txtMinPrice.Text = item.MinPrice.ToString();
+            txtHighestBid.Text = item.MinPrice.ToString();
+
+        }
+
     }
 }
