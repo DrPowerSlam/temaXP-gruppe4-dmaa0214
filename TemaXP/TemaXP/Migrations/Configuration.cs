@@ -1,6 +1,9 @@
 namespace TemaXP.Migrations
 {
+    using System;
+    using System.Collections.Generic;
     using System.Data.Entity.Migrations;
+    using TemaXP.ModelLayer;
 
     internal sealed class Configuration : DbMigrationsConfiguration<TemaXP.DBLayer.DBContext>
     {

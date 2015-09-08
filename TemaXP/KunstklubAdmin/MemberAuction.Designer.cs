@@ -248,6 +248,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(862, 561);
             this.Controls.Add(this.lblBidByMember);
             this.Controls.Add(this.lblLatestBid);
@@ -272,9 +273,9 @@
             this.Controls.Add(this.lblMemberEmail);
             this.Controls.Add(this.lblMemberName);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "MemberAuction";
             this.Text = "UCN Kunst klub";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MemberAuction_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picItem)).EndInit();
             this.ResumeLayout(false);

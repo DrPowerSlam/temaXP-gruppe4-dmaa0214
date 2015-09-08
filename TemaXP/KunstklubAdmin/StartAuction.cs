@@ -7,6 +7,7 @@ namespace KunstklubAdmin
 {
     public partial class StartAuction : Form
     {
+        private const int DEFAULTTIMER = 60;
         private int timeLeft;
 
         private ItemCtr itemCtr = new ItemCtr();
@@ -20,7 +21,7 @@ namespace KunstklubAdmin
             InitializeComponent();
 
             timer.Stop();
-            timeLeft = 60;
+            timeLeft = DEFAULTTIMER;
             timer.Interval = 1000;
             timer.Tick += TimerTick;
 
@@ -78,6 +79,7 @@ namespace KunstklubAdmin
             btnOKInterval.Enabled = true;
             btnOKTimer.Enabled = true;
 
+
             MarkItem();
         }
 
@@ -114,6 +116,7 @@ namespace KunstklubAdmin
             btnPause.Enabled = false;
             btnStart.Enabled = false;
             btnHammerslag.Enabled = false;
+
         }
 
         //TODO send en form for notification til MemberAuction om at auction er startet + selected Item
@@ -166,8 +169,13 @@ namespace KunstklubAdmin
         private void btnNext_Click(object sender, EventArgs e)
         {
             HandleNext();
+            timeLeft = DEFAULTTIMER;
             btnHammerslag.Enabled = false;
             btnPause.Enabled = false;
+            btnStart.Enabled = true;
+            btnNext.Enabled = false;
+
+
         }
 
         private void HandleNext()
