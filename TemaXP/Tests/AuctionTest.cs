@@ -53,6 +53,13 @@ namespace Tests
             ctr.DeleteAuction(foundAuction.ID);
         }
 
+        [TestMethod]
+        public void GetCurrentAuction()
+        {
+            Auction auction = ctr.GetCurrentAuction();
+            Assert.AreEqual(auction.Date.Year, DateTime.Now.Year);
+        }
+
 
     }
 }
