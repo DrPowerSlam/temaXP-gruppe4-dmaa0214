@@ -11,5 +11,8 @@ namespace TemaXP.ModelLayer
         public List<Member> Members { get; set; }
         [Required]
         public DateTime Date { get; set; }
+
+        [Timestamp]
+        public Byte[] Timestamp { get; set; }
     }
 }
