@@ -14,7 +14,6 @@ namespace Tests
         private MemberCtr ctr;
         private Member member;
 
-        //TODO nummer skal være firechifret nummer...
         [TestInitialize]
         public void MemberInitialize()
         {

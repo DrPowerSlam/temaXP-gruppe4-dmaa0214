@@ -65,6 +65,7 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.adminPanel = new System.Windows.Forms.Panel();
             this.panelEditTimer = new System.Windows.Forms.Panel();
+            this.txtEditTimer = new System.Windows.Forms.TextBox();
             this.btnOKTimer = new System.Windows.Forms.Button();
             this.lblTimerEdit = new System.Windows.Forms.Label();
             this.panelEditInterval = new System.Windows.Forms.Panel();
@@ -74,7 +75,6 @@
             this.txtSetInterval = new System.Windows.Forms.TextBox();
             this.lblAdminTools = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.txtEditTimer = new System.Windows.Forms.TextBox();
             this.leftPanel.SuspendLayout();
             this.StartAuctionPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
@@ -456,6 +456,7 @@
             this.btnNext.TabIndex = 3;
             this.btnNext.Text = "Næste";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // adminPanel
             // 
@@ -481,6 +482,13 @@
             this.panelEditTimer.Name = "panelEditTimer";
             this.panelEditTimer.Size = new System.Drawing.Size(130, 74);
             this.panelEditTimer.TabIndex = 26;
+            // 
+            // txtEditTimer
+            // 
+            this.txtEditTimer.Location = new System.Drawing.Point(0, 0);
+            this.txtEditTimer.Name = "txtEditTimer";
+            this.txtEditTimer.Size = new System.Drawing.Size(100, 20);
+            this.txtEditTimer.TabIndex = 0;
             // 
             // btnOKTimer
             // 
@@ -561,15 +569,6 @@
             this.lblAdminTools.Size = new System.Drawing.Size(84, 13);
             this.lblAdminTools.TabIndex = 0;
             this.lblAdminTools.Text = "Admin værktøjer";
-            // 
-            // lblPercent
-            // 
-            this.lblPercent.AutoSize = true;
-            this.lblPercent.Location = new System.Drawing.Point(104, 20);
-            this.lblPercent.Name = "lblPercent";
-            this.lblPercent.Size = new System.Drawing.Size(15, 13);
-            this.lblPercent.TabIndex = 25;
-            this.lblPercent.Text = "%";
             // 
             // StartAuction
             // 

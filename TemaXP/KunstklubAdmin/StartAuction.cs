@@ -8,18 +8,28 @@ namespace KunstklubAdmin
     public partial class StartAuction : Form
     {
         private int timeLeft;
-
+        
         private ItemCtr itemCtr = new ItemCtr();
+
+        private AuctionCtr auctionCtr = new AuctionCtr();
+        
 
         public StartAuction()
         {
             InitializeComponent();
+
             timer.Stop();
             timeLeft = 60;
             timer.Interval = 1000;
             timer.Tick += TimerTick;
 
             txtEditTimer.Text = timeLeft.ToString();
+
+            //Disable/enable knapper
+            btnHammerslag.Enabled = false;
+            btnNext.Enabled = false;
+            btnPause.Enabled = false;
+            btnStart.Enabled = false;
         }
 
         private void StartTimer()
@@ -62,11 +72,17 @@ namespace KunstklubAdmin
         private void btnStart_Click(object sender, EventArgs e)
         {
             StartTimer();
+            //Sørg for at den enable næste knap og pause knap.
+            btnHammerslag.Enabled = true;
+            btnPause.Enabled = true;
+
+            MarkItem();
         }
 
         private void btnPause_Click(object sender, EventArgs e)
         {
             PauseTimer();
+            MarkItem();
         }
 
         private void btnOKTimer_Click(object sender, EventArgs e)
@@ -77,6 +93,8 @@ namespace KunstklubAdmin
         private void btnHammerslag_Click(object sender, EventArgs e)
         {
             //TODO EndItem(item);
+            btnNext.Enabled = true;
+            MarkItem();
         }
 
         private void txtEditTimer_KeyPress(object sender, KeyPressEventArgs e)
@@ -90,19 +108,30 @@ namespace KunstklubAdmin
         //TODO send en form for notification til MemberAuction om at auction er startet + selected Item
         private void btnStartAuction_Click(object sender, System.EventArgs e)
         {
-            foreach (Item artPiece in itemCtr.GetAllItems()){
-                ListViewItem lvItem = new ListViewItem();
-                lvItem.Text = artPiece.Author + ": " + artPiece.Title;
-                lvItem.Tag = artPiece;
-                listItem.Items.Add(lvItem);
+            btnStart.Enabled = true;
+            HandleStartAuction();
+        }
+
+        private void HandleStartAuction()
+        {
+            Auction currentAuction = auctionCtr.GetCurrentAuction();
+            auctionCtr.MaxIndex = currentAuction.Items.Count-1;
+            if (currentAuction != null && currentAuction.Items.Count > 0)
+            {
+                foreach (Item artPiece in currentAuction.Items)
+                {
+                    ListViewItem lvItem = new ListViewItem();
+                    lvItem.Text = artPiece.Author + ": " + artPiece.Title;
+                    lvItem.Tag = artPiece;
+                    listItem.Items.Add(lvItem);
+                }
             }
 
             listItem.Focus();
-            listItem.Items[0].Selected = true;
+            listItem.Items[auctionCtr.Index].Selected = true;
 
-            Item art = (Item)listItem.Items[0].Tag;
+            Item art = (Item)listItem.Items[auctionCtr.Index].Tag;
             ShowItem(art);
-            
         }
 
         //TODO tilføj billedfiler
@@ -119,5 +148,39 @@ namespace KunstklubAdmin
 
         }
 
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            HandleNext();
+        }
+
+        private void HandleNext()
+        {
+            if(auctionCtr.Index != auctionCtr.MaxIndex)
+            {
+                ResetSelection();
+                auctionCtr.Index += 1;
+                MarkItem();
+                Item art = (Item)listItem.Items[auctionCtr.Index].Tag;
+                ShowItem(art);
+            }
+
+            //stop or do nothing.
+        }
+
+        private void MarkItem()
+        {
+            
+            listItem.Focus();
+            listItem.Items[auctionCtr.Index].Selected = true;
+        }
+
+        private void ResetSelection()
+        {
+            listItem.Focus();
+            listItem.Items[auctionCtr.Index].Selected = false;
+        }
+
+
+        
     }
 }
