@@ -37,5 +37,10 @@ namespace TemaXP.CtrLayer
         {
             repos.DeleteMember(id);
         }
+
+        public double CalculateMaxBid(Member currentMember)
+        {
+            return FindMember(currentMember.ID).Points * 3;
+        }
     }
 }

@@ -1,9 +1,9 @@
 namespace TemaXP.Migrations
 {
-    using System.Data.Entity.Migrations;
-    using ModelLayer;
-    using System.Collections.Generic;
     using System;
+    using System.Collections.Generic;
+    using System.Data.Entity.Migrations;
+    using TemaXP.ModelLayer;
 
     internal sealed class Configuration : DbMigrationsConfiguration<TemaXP.DBLayer.DBContext>
     {
@@ -13,7 +13,7 @@ namespace TemaXP.Migrations
         }
 
 
-        
+        /*
         protected override void Seed(TemaXP.DBLayer.DBContext context)
         {
             //  This method will be called after migrating to the latest version.
@@ -204,7 +204,7 @@ namespace TemaXP.Migrations
 
             context.SaveChanges();
         }
-        
+        */
 
     }
 }
