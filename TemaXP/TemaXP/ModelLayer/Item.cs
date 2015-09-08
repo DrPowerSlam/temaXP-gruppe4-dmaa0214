@@ -17,10 +17,10 @@ namespace TemaXP.ModelLayer
         [Index(IsUnique = true), Range(1000, 9999)]
         public int Number { get; set; }
         public String Description { get; set; }
-        public double PurchasePrice { get; set; }
+        public int PurchasePrice { get; set; }
         public int Interval { get; set; }
         public String Image { get; set; }
-        public double MinPrice { get; set; }
+        public int MinPrice { get; set; }
 
         [Timestamp]
         public Byte[] Timestamp { get; set; }
@@ -38,8 +38,8 @@ namespace TemaXP.ModelLayer
         }
 
         public Item(int number, string author, string title, int year,
-            string description, double purchasePrice, int interval,
-            string image, double minPrice)
+            string description, int purchasePrice, int interval,
+            string image, int minPrice)
         {
             Number = number;
             Author = author;
