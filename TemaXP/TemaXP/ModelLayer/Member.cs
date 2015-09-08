@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TemaXP.ModelLayer
@@ -25,6 +26,9 @@ namespace TemaXP.ModelLayer
         [ForeignKey("Auction")]
         public int? AuctionID { get; set; }
         public Auction Auction { get; set; }
+
+        [Timestamp]
+        public Byte[] Timestamp { get; set; }
 
         // bool admin?
 

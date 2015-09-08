@@ -14,13 +14,16 @@ namespace TemaXP.ModelLayer
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
-        [Index (IsUnique = true), Range(1000, 9999)]
+        [Index(IsUnique = true), Range(1000, 9999)]
         public int Number { get; set; }
         public String Description { get; set; }
         public double PurchasePrice { get; set; }
         public int Interval { get; set; }
         public String Image { get; set; }
         public double MinPrice { get; set; }
+
+        [Timestamp]
+        public Byte[] Timestamp { get; set; }
 
         [ForeignKey("Auction")]
         public int? AuctionID { get; set; }
