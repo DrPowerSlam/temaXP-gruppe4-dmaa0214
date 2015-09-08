@@ -125,9 +125,11 @@ namespace KunstklubAdmin
         private void HandleStartAuction()
         {
             Auction currentAuction = auctionCtr.GetCurrentAuction();
-            auctionCtr.MaxIndex = currentAuction.Items.Count - 1;
+            
             if (currentAuction != null && currentAuction.Items.Count > 0)
             {
+                auctionCtr.MaxIndex = currentAuction.Items.Count - 1;
+
                 foreach (Item artPiece in currentAuction.Items)
                 {
                     ListViewItem lvItem = new ListViewItem();
@@ -137,8 +139,7 @@ namespace KunstklubAdmin
                 }
             }
 
-            listItem.Focus();
-            listItem.Items[auctionCtr.Index].Selected = true;
+            MarkItem();
             ShowItem(GetNextItem());
 
             btnStart.Enabled = true;
@@ -182,9 +183,9 @@ namespace KunstklubAdmin
             //stop or do nothing.
         }
 
+        //TODO can this be done better?
         private void MarkItem()
         {
-
             listItem.Focus();
             listItem.Items[auctionCtr.Index].Selected = true;
         }
