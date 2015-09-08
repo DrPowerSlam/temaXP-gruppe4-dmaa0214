@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using TemaXP.ModelLayer;
+using System.Data.Entity;
 
 namespace TemaXP.DBLayer
 {
@@ -25,7 +26,7 @@ namespace TemaXP.DBLayer
 
         public List<Auction> GetAllAuctions()
         {
-            return context.Auctions.ToList();
+            return context.Auctions.Include(a => a.Items).ToList();
         }
     }
 }
