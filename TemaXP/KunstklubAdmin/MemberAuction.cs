@@ -10,6 +10,8 @@ namespace KunstklubAdmin
     {
         private Member currentMember;
         private MemberCtr memberCtr;
+
+        //only for test and simulation purposes!!!
         private int idOfDummyMember = 21;
 
         private AuctionCtr auctionCtr = new AuctionCtr();
