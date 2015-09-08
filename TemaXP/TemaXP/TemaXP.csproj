@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8F16A49C-994F-4BEB-9A45-7EE0F184EB25}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TemaXP</RootNamespace>
     <AssemblyName>TemaXP</AssemblyName>
@@ -70,6 +70,7 @@
     <Compile Include="ModelLayer\Bid.cs" />
     <Compile Include="ModelLayer\Item.cs" />
     <Compile Include="ModelLayer\Member.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

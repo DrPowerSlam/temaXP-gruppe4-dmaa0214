@@ -12,6 +12,88 @@ namespace TemaXP.Migrations
             AutomaticMigrationsEnabled = true;
         }
 
+        // Rewriten -- How to debug?
+        protected override void Seed(TemaXP.DBLayer.DBContext context)
+        {
+            var auctions = new List<Auction>();
+            var bids = new List<Bid>();
+            var items = new List<Item>();
+            var members = new List<Member>();
+
+            for (int i = 0; i < 3; i++)
+            {
+                auctions.Add(
+                    new Auction()
+                    {
+                        Members = members,
+                        Date = DateTime.Now,
+                        Items = items,
+                    });
+
+                bids.Add(
+                    new Bid()
+                    {
+                        Amount = 500+i,
+                        Item = items[i],
+                        Member = members [i],
+                    });
+
+                items.Add(
+                    new Item()
+                    {
+                        Auction = auctions[i],
+                        Author = "Van Gogh",
+                        Description = "This is an image description",
+                        Interval = 10,
+                        MinPrice = 2000,
+                        Number = 1000+i,
+                        PurchasePrice = 2500,
+                        Sold = false,
+                        Image = null,
+                        Title = "Test Item " + i,
+                        Year = 1600+i,
+                    });
+
+                members.Add(
+                    new Member()
+                    {
+                        Address = "Test Street " + i,
+                        Auction = auctions[i],
+                        Bids = bids,
+                        CPR = "102128-112"+i,
+                        City = "Test City",
+                        Department = "Staff",
+                        Email = "tstper" + i + "@gmail.com",
+                        Name = "Test Person " + i,
+                        PhoneNr = "2812842"+i,
+                        Points = 1200,
+                        ZipCode = 9000,
+                    });
+
+                foreach (var mem in members)
+                {
+                    context.Members.AddOrUpdate(m => m.CPR, mem);
+                }
+                foreach (var item in items)
+                {
+                    context.Items.AddOrUpdate(j => j.Title, item);
+                }
+                foreach (var bid in bids)
+                {
+                    context.Bids.AddOrUpdate(b => b.Amount, bid);
+                }
+                foreach (var auc in auctions)
+                {
+                    context.Auctions.AddOrUpdate(a => a.Date, auc);
+                }
+
+                context.SaveChanges();
+
+            }
+
+            
+        }
+
 
         /*
         protected override void Seed(TemaXP.DBLayer.DBContext context)
