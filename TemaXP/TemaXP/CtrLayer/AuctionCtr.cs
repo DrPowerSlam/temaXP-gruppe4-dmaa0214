@@ -23,6 +23,13 @@ namespace TemaXP.CtrLayer
             repos.InsertAuction(auction);
         }
 
+        public void RegisterBid(Bid bid)
+        {
+            // check points
+            CurrentBid = bid;
+            // share to subscribers
+        }
+
         public void RegisterSale()
         {
             if (CurrentBid != null)
@@ -31,6 +38,7 @@ namespace TemaXP.CtrLayer
                 CurrentBid.Item.Sold = true;
                 CurrentBid = null;
             }
+            // clean subscriber bids list
         }
 
         public Auction FindAuction(int id)
