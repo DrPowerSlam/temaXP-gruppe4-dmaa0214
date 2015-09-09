@@ -13,12 +13,15 @@ namespace KunstklubAdmin
         private ItemCtr itemCtr = new ItemCtr();
         private Item currentItem;
 
-        private AuctionCtr auctionCtr = new AuctionCtr();
+        private AuctionCtr auctionCtr;
+
+        public event EventHandler<NextItemChangedArgs> NextItemChanged;
 
 
-        public StartAuction()
+        public StartAuction(AuctionCtr auctionCtr)
         {
             InitializeComponent();
+            this.auctionCtr = auctionCtr;
 
             timer.Stop();
             timeLeft = DEFAULTTIMER;
@@ -128,7 +131,7 @@ namespace KunstklubAdmin
         private void HandleStartAuction()
         {
             Auction currentAuction = auctionCtr.GetCurrentAuction();
-            
+
             if (currentAuction != null && currentAuction.Items.Count > 0)
             {
                 auctionCtr.MaxIndex = currentAuction.Items.Count - 1;
@@ -161,9 +164,15 @@ namespace KunstklubAdmin
             txtNumber.Text = item.Number.ToString();
             txtArtist.Text = item.Author;
             txtDescription.Text = item.Description;
+            txtTitel.Text = item.Title;
             txtInterval.Text = itemCtr.CalculateInterval(item).ToString();
             txtMinPrice.Text = item.MinPrice.ToString();
             //txtHighestBid.Text = item.MinPrice.ToString();
+
+            if (this.NextItemChanged != null)
+            {
+                this.NextItemChanged(this, new NextItemChangedArgs(this.currentItem));
+            }
         }
 
         private void btnNext_Click(object sender, EventArgs e)

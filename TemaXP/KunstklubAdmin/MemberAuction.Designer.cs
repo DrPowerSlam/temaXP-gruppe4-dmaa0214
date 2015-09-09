@@ -32,7 +32,6 @@
             this.lblMemberEmail = new System.Windows.Forms.Label();
             this.listItem = new System.Windows.Forms.ListView();
             this.picItem = new System.Windows.Forms.PictureBox();
-            this.lblItemInfo = new System.Windows.Forms.Label();
             this.btnBid = new System.Windows.Forms.Button();
             this.lblTimer = new System.Windows.Forms.Label();
             this.lblTextLabel = new System.Windows.Forms.Label();
@@ -50,6 +49,14 @@
             this.lblDKK = new System.Windows.Forms.Label();
             this.lblLatestBid = new System.Windows.Forms.Label();
             this.lblBidByMember = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.txtArtist = new System.Windows.Forms.TextBox();
+            this.lblArtist = new System.Windows.Forms.Label();
+            this.txtTitel = new System.Windows.Forms.TextBox();
+            this.lblTitel = new System.Windows.Forms.Label();
+            this.txtNumber = new System.Windows.Forms.TextBox();
+            this.lblNumber = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picItem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,15 +94,6 @@
             this.picItem.Size = new System.Drawing.Size(260, 193);
             this.picItem.TabIndex = 4;
             this.picItem.TabStop = false;
-            // 
-            // lblItemInfo
-            // 
-            this.lblItemInfo.AutoSize = true;
-            this.lblItemInfo.Location = new System.Drawing.Point(143, 258);
-            this.lblItemInfo.Name = "lblItemInfo";
-            this.lblItemInfo.Size = new System.Drawing.Size(131, 13);
-            this.lblItemInfo.TabIndex = 5;
-            this.lblItemInfo.Text = "Information om Kunstværk";
             // 
             // btnBid
             // 
@@ -203,7 +201,7 @@
             // 
             // txtBidPrice
             // 
-            this.txtBidPrice.Location = new System.Drawing.Point(146, 378);
+            this.txtBidPrice.Location = new System.Drawing.Point(146, 422);
             this.txtBidPrice.Name = "txtBidPrice";
             this.txtBidPrice.ReadOnly = true;
             this.txtBidPrice.Size = new System.Drawing.Size(100, 20);
@@ -211,7 +209,7 @@
             // 
             // txtBidMember
             // 
-            this.txtBidMember.Location = new System.Drawing.Point(259, 378);
+            this.txtBidMember.Location = new System.Drawing.Point(259, 422);
             this.txtBidMember.Name = "txtBidMember";
             this.txtBidMember.ReadOnly = true;
             this.txtBidMember.Size = new System.Drawing.Size(100, 20);
@@ -229,7 +227,7 @@
             // lblLatestBid
             // 
             this.lblLatestBid.AutoSize = true;
-            this.lblLatestBid.Location = new System.Drawing.Point(149, 362);
+            this.lblLatestBid.Location = new System.Drawing.Point(149, 406);
             this.lblLatestBid.Name = "lblLatestBid";
             this.lblLatestBid.Size = new System.Drawing.Size(67, 13);
             this.lblLatestBid.TabIndex = 25;
@@ -238,11 +236,88 @@
             // lblBidByMember
             // 
             this.lblBidByMember.AutoSize = true;
-            this.lblBidByMember.Location = new System.Drawing.Point(262, 362);
+            this.lblBidByMember.Location = new System.Drawing.Point(262, 406);
             this.lblBidByMember.Name = "lblBidByMember";
             this.lblBidByMember.Size = new System.Drawing.Size(36, 13);
             this.lblBidByMember.TabIndex = 26;
             this.lblBidByMember.Text = "Navn:";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(212, 333);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.ReadOnly = true;
+            this.txtDescription.Size = new System.Drawing.Size(139, 41);
+            this.txtDescription.TabIndex = 34;
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Location = new System.Drawing.Point(148, 333);
+            this.lblDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(64, 13);
+            this.lblDescription.TabIndex = 33;
+            this.lblDescription.Text = "Beskrivelse:";
+            // 
+            // txtArtist
+            // 
+            this.txtArtist.Location = new System.Drawing.Point(212, 306);
+            this.txtArtist.Margin = new System.Windows.Forms.Padding(2);
+            this.txtArtist.Name = "txtArtist";
+            this.txtArtist.ReadOnly = true;
+            this.txtArtist.Size = new System.Drawing.Size(139, 20);
+            this.txtArtist.TabIndex = 32;
+            // 
+            // lblArtist
+            // 
+            this.lblArtist.AutoSize = true;
+            this.lblArtist.Location = new System.Drawing.Point(148, 308);
+            this.lblArtist.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblArtist.Name = "lblArtist";
+            this.lblArtist.Size = new System.Drawing.Size(52, 13);
+            this.lblArtist.TabIndex = 31;
+            this.lblArtist.Text = "Kunstner:";
+            // 
+            // txtTitel
+            // 
+            this.txtTitel.Location = new System.Drawing.Point(212, 283);
+            this.txtTitel.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTitel.Name = "txtTitel";
+            this.txtTitel.ReadOnly = true;
+            this.txtTitel.Size = new System.Drawing.Size(139, 20);
+            this.txtTitel.TabIndex = 30;
+            // 
+            // lblTitel
+            // 
+            this.lblTitel.AutoSize = true;
+            this.lblTitel.Location = new System.Drawing.Point(148, 284);
+            this.lblTitel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitel.Name = "lblTitel";
+            this.lblTitel.Size = new System.Drawing.Size(30, 13);
+            this.lblTitel.TabIndex = 29;
+            this.lblTitel.Text = "Titel:";
+            // 
+            // txtNumber
+            // 
+            this.txtNumber.Location = new System.Drawing.Point(212, 260);
+            this.txtNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNumber.Name = "txtNumber";
+            this.txtNumber.ReadOnly = true;
+            this.txtNumber.Size = new System.Drawing.Size(76, 20);
+            this.txtNumber.TabIndex = 28;
+            // 
+            // lblNumber
+            // 
+            this.lblNumber.AutoSize = true;
+            this.lblNumber.Location = new System.Drawing.Point(148, 260);
+            this.lblNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNumber.Name = "lblNumber";
+            this.lblNumber.Size = new System.Drawing.Size(24, 13);
+            this.lblNumber.TabIndex = 27;
+            this.lblNumber.Text = "Nr.:";
             // 
             // MemberAuction
             // 
@@ -250,6 +325,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(862, 561);
+            this.Controls.Add(this.txtDescription);
+            this.Controls.Add(this.lblDescription);
+            this.Controls.Add(this.txtArtist);
+            this.Controls.Add(this.lblArtist);
+            this.Controls.Add(this.txtTitel);
+            this.Controls.Add(this.lblTitel);
+            this.Controls.Add(this.txtNumber);
+            this.Controls.Add(this.lblNumber);
             this.Controls.Add(this.lblBidByMember);
             this.Controls.Add(this.lblLatestBid);
             this.Controls.Add(this.lblDKK);
@@ -267,7 +350,6 @@
             this.Controls.Add(this.lblTextLabel);
             this.Controls.Add(this.lblTimer);
             this.Controls.Add(this.btnBid);
-            this.Controls.Add(this.lblItemInfo);
             this.Controls.Add(this.picItem);
             this.Controls.Add(this.listItem);
             this.Controls.Add(this.lblMemberEmail);
@@ -288,7 +370,6 @@
         private System.Windows.Forms.Label lblMemberEmail;
         private System.Windows.Forms.ListView listItem;
         private System.Windows.Forms.PictureBox picItem;
-        private System.Windows.Forms.Label lblItemInfo;
         private System.Windows.Forms.Button btnBid;
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.Label lblTextLabel;
@@ -306,6 +387,14 @@
         private System.Windows.Forms.Label lblDKK;
         private System.Windows.Forms.Label lblLatestBid;
         private System.Windows.Forms.Label lblBidByMember;
+        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.TextBox txtArtist;
+        private System.Windows.Forms.Label lblArtist;
+        private System.Windows.Forms.TextBox txtTitel;
+        private System.Windows.Forms.Label lblTitel;
+        private System.Windows.Forms.TextBox txtNumber;
+        private System.Windows.Forms.Label lblNumber;
     }
 }
 
