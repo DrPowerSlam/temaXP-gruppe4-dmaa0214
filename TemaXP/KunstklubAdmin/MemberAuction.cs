@@ -10,18 +10,35 @@ namespace KunstklubAdmin
     {
         private Member currentMember;
         private MemberCtr memberCtr;
+        private AuctionCtr auctionCtr;
+        private Item currentItem;
 
         //only for test and simulation purposes!!!
-        private int idOfDummyMember = 21;
+        private int idOfDummyMember = 1;
 
-        private AuctionCtr auctionCtr = new AuctionCtr();
+        
 
-        public MemberAuction()
+        public MemberAuction(AuctionCtr auctionCtr)
         {
             InitializeComponent();
-
+            this.auctionCtr = auctionCtr;
             memberCtr = new MemberCtr();
             currentMember = memberCtr.FindMember(idOfDummyMember);
+        }
+
+        public void ItemChanged(object sender, NextItemChangedArgs e)
+        {
+            ShowItem(e.Item);
+        }
+
+        private void ShowItem(Item item)
+        {
+            this.currentItem = item;
+            txtNumber.Text = currentItem.Number.ToString();
+            txtArtist.Text = currentItem.Author;
+            txtTitel.Text = currentItem.Title;
+            txtDescription.Text = currentItem.Description;
+            //txtHighestBid.Text = currentItem.MinPrice.ToString();
         }
 
 
@@ -33,7 +50,7 @@ namespace KunstklubAdmin
 
         private void startToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StartAuction startAuction = new StartAuction();
+            StartAuction startAuction = new StartAuction(auctionCtr);
             startAuction.Show();
         }
 
