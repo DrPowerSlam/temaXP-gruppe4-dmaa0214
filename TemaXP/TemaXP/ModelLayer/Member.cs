@@ -21,7 +21,6 @@ namespace TemaXP.ModelLayer
         //ik mere end 5 års kontigent i points. 50(om måneden)*12(1 år)*5(5 år)
         public int Points { get; set; }
 
-        [ForeignKey("Bid")]
         public List<Bid> Bids { get; set; }
 
         [ForeignKey("Auction")]
