@@ -12,7 +12,7 @@ namespace KunstklubAdmin
         private MemberCtr memberCtr;
 
         //only for test and simulation purposes!!!
-        private int idOfDummyMember = 21;
+        private int idOfDummyMember = 1;
 
         private AuctionCtr auctionCtr = new AuctionCtr();
 
@@ -39,6 +39,7 @@ namespace KunstklubAdmin
 
         private void MemberAuction_Load(object sender, EventArgs e)
         {
+            //load items
             Auction currentAuction = auctionCtr.GetCurrentAuction();
             auctionCtr.MaxIndex = currentAuction.Items.Count - 1;
             if (currentAuction != null && currentAuction.Items.Count > 0)
@@ -55,6 +56,9 @@ namespace KunstklubAdmin
             listItem.Focus();
             listItem.Items[auctionCtr.Index].Selected = true;
 
+            //load member info
+            lblMemberName.Text = currentMember.Name;
+            lblMemberEmail.Text = currentMember.Email;
             txtMyPoints.Text = currentMember.Points.ToString();
             txtMaxBid.Text = memberCtr.CalculateMaxBid(currentMember).ToString();
         }
